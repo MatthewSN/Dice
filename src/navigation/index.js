@@ -3,11 +3,12 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 const StackNavigator = createStackNavigator({
-  Login: Screens.Login,
   Home: Screens.Home,
+  SignUp: Screens.SignUp,
+  Login: Screens.Login,
+
   Game: Screens.Game,
-  Verification: Screens.Verification,
-  SignUp: Screens.SignUp
+  Verification: Screens.Verification
 });
 
 export default createAppContainer(StackNavigator);
