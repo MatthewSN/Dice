@@ -10,6 +10,7 @@ MERGED from [:react-native-screens] /home/matthew/Documents/reactNative/Dice/nod
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-safe-area-context] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/AndroidManifest.xml:17:1-24:12
@@ -290,6 +291,8 @@ MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-safe-area-context] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/AndroidManifest.xml:20:5-44
