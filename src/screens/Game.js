@@ -5,11 +5,8 @@ import {
   ScrollView,
   Image,
   StyleSheet,
-  Dimensions,
-  FlatList,
-  TouchableHighlight
+  Dimensions
 } from "react-native";
-import { Card, colors } from "react-native-elements";
 import diceList from "../utils/dataLists/diceList";
 import DiceDimentions from "../components/DiceDimentions";
 
