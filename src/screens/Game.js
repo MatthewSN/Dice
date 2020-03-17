@@ -9,37 +9,44 @@ import {
   FlatList,
   TouchableHighlight
 } from "react-native";
-import { Card } from "react-native-elements";
+import { Card, colors } from "react-native-elements";
 import diceList from "../utils/dataLists/diceList";
+import DiceDimentions from "../components/DiceDimentions";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
 const Game = () => {
-  const { section2, section1, textCnt, selectedItem, unselectedItem } = styles;
+  const { section2, section1, textCnt, txt } = styles;
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
-  const [dicePngs, setDicePngs] = useState(diceList);
+  const [diceDimentions, setDiceDimentions] = useState(diceList);
+  const [selectedItems, setSelectedItems] = useState([]);
 
-  const onItemDicePress = id => {
-    const itemIndex = dicePngs.findIndex(item => item.id === id);
-    const item = dicePngs[itemIndex];
+  const onDiceDimentionPress = id => {
+    const itemIndex = diceDimentions.findIndex(item => item.id === id);
+    const item = diceDimentions[itemIndex];
     let updatedItem = { ...item };
+    let updatedSelectedItems = [...selectedItems];
     if (selectedItemsCount < 3 && !item.isSlected) {
       updatedItem = {
         ...item,
         isSlected: true
       };
       setSelectedItemsCount(selectedItemsCount + 1);
+      updatedSelectedItems.push(item.id);
     } else if (item.isSlected) {
       updatedItem = {
         ...item,
         isSlected: false
       };
       setSelectedItemsCount(selectedItemsCount - 1);
+      updatedSelectedItems = selectedItems.filter(id => id != item.id);
     }
-
-    const updatedList = [...dicePngs];
+    setSelectedItems(updatedSelectedItems);
+    console.log(updatedSelectedItems);
+    const updatedList = [...diceDimentions];
     updatedList[itemIndex] = updatedItem;
-    setDicePngs(updatedList);
+
+    setDiceDimentions(updatedList);
   };
 
   return (
@@ -53,33 +60,12 @@ const Game = () => {
         </View>
         <View style={section2}>
           <View style={textCnt}>
-            <Text>سه وجه را انتخاب کنید</Text>
+            <Text style={txt}>سه وجه را انتخاب کنید</Text>
           </View>
           <View>
-            <FlatList
-              data={dicePngs}
-              horizontal={true}
-              renderItem={({ item }) => {
-                return (
-                  <Card>
-                    <TouchableHighlight
-                      underlayColor="red"
-                      activeOpacity={0.9}
-                      onPress={onItemDicePress.bind(this, item.id)}
-                    >
-                      <View
-                        style={item.isSlected ? selectedItem : unselectedItem}
-                      >
-                        <Image
-                          style={{ width: 100, height: 100 }}
-                          source={item.image}
-                        />
-                      </View>
-                    </TouchableHighlight>
-                  </Card>
-                );
-              }}
-              keyExtractor={item => item.id}
+            <DiceDimentions
+              onDiceDimentionPress={onDiceDimentionPress}
+              diceDimentions={diceDimentions}
             />
           </View>
         </View>
@@ -101,15 +87,12 @@ const styles = StyleSheet.create({
     height: DEVICE_HEIGHT / 2,
     minHeight: 320
   },
-  imageCnt1: {},
   textCnt: {
     alignItems: "center"
   },
-  selectedItem: {
-    backgroundColor: "blue"
-  },
-  unselectedItem: {
-    backgroundColor: "gray"
+  txt: {
+    fontWeight: "700",
+    fontSize: 30
   }
 });
 
