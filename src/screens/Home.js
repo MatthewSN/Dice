@@ -1,9 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
+import { useSelector } from "react-redux";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const { recordCnt } = styles;
+  const {
+    currentPoint,
+    totalPoints,
+    rank,
+    record,
+    pointInRecord
+  } = useSelector(state => state.pointInfo);
+
+  const onStartGamePress = () => {
+    navigation.push("Game");
+  };
   return (
     <View>
       <Card>
@@ -12,7 +24,7 @@ const Home = () => {
             <Text>رکورد:</Text>
           </View>
           <View>
-            <Text>0</Text>
+            <Text>{record}</Text>
           </View>
         </View>
         <View style={recordCnt}>
@@ -20,7 +32,7 @@ const Home = () => {
             <Text>امتیاز در رکورد فعلی:</Text>
           </View>
           <View>
-            <Text>0</Text>
+            <Text>{pointInRecord}</Text>
           </View>
         </View>
 
@@ -29,7 +41,7 @@ const Home = () => {
             <Text>امتیاز فعلی:</Text>
           </View>
           <View>
-            <Text>0</Text>
+            <Text>{currentPoint}</Text>
           </View>
         </View>
         <View style={recordCnt}>
@@ -37,10 +49,10 @@ const Home = () => {
             <Text>رتبه</Text>
           </View>
           <View>
-            <Text>0</Text>
+            <Text>{rank}</Text>
           </View>
         </View>
-        <Button title="شروع بازی" />
+        <Button onPress={onStartGamePress} title="شروع بازی" />
       </Card>
     </View>
   );
@@ -53,5 +65,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
+
+
+
 
 export default Home;

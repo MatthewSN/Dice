@@ -14,3 +14,8 @@ export const setAppStatus = (status = {}) => ({
   type: Types.SET_APP_STATUS,
   payload: status
 });
+
+export const setIsFetching = isFetching => ({
+  type: Types.SET_IS_FETCHING,
+  payload: isFetching
+});
