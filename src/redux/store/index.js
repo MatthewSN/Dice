@@ -5,14 +5,12 @@ import appStatusReducer from "../reducers/appStatus";
 import thunk from "redux-thunk";
 
 const store = createStore(
-  combineReducers(
-    {
-      pointInfo: pointInfoReducer,
-      user: userReducer,
-      appStatus: appStatusReducer
-    },
-    applyMiddleware(thunk)
-  )
+  combineReducers({
+    pointInfo: pointInfoReducer,
+    user: userReducer,
+    appStatus: appStatusReducer
+  }),
+  applyMiddleware(thunk)
 );
 
 export default store;

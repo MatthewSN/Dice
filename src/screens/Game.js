@@ -12,6 +12,7 @@ import DiceDimentions from "../components/DiceDimentions";
 import { Button } from "react-native-elements";
 import { useSelector, useDispatch } from "react-redux";
 import { setIsFetching } from "../redux/actions";
+import { getPoint } from "../redux/actions/api";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
@@ -52,6 +53,7 @@ const Game = () => {
   };
 
   const onRollTheDicePress = () => {
+    dispatch(getPoint());
     dispatch(setIsFetching(!isFetching));
   };
 

@@ -1,4 +1,4 @@
-import Urls from "../utils/urls";
+import Urls from "../../utils/urls";
 import * as HttpRequests from "./utils/httpRequests";
 import * as Actions from "../index";
 import ApiResponseState from "../../utils/responseState";
@@ -162,6 +162,8 @@ export const getPoint = () => {
           })
         );
       }
-    } catch (e) {}
+    } catch (e) {
+      ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
+    }
   };
 };
