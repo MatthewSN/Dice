@@ -14,5 +14,7 @@ export default {
   NAME: "اسم",
   EMPTY_FIELDS_ERROR: "هیچ یک از فیلد ها نمی تواند خالی باشد",
   EMPTY_FIELD_ERROR: "این فیلد نمی تواند خالی بماند",
-  INVALID_PHONE_NUMEBERـERROR: "شماره وارد شده معتبر نمی باشد "
+  INVALID_PHONE_NUMEBERـERROR: "شماره وارد شده معتبر نمی باشد ",
+  VERIFICATION: "اعتبارسنجی",
+  CODE: "کد اعتبارسنجی"
 };
