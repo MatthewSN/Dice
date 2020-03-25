@@ -32,7 +32,7 @@ const Login = ({ navigation }) => {
       <View style={inputCnt}>
         <Input
           placeholder={Strings.PHONE_NUMBER}
-          leftIcon={{ type: "font-awesome", name: "mobile-phone" }}
+          rightIcon={{ type: "font-awesome", name: "mobile-phone" }}
           keyboardType="numeric"
           onChangeText={phoneNumberChangeHandler}
           value={phoneNumber}

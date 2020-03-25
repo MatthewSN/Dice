@@ -32,7 +32,7 @@ const SignUp = () => {
       <View style={inputCnt}>
         <Input
           placeholder={Strings.PHONE_NUMBER}
-          leftIcon={{ type: "font-awesome", name: "mobile-phone" }}
+          rightIcon={{ type: "font-awesome", name: "mobile-phone" }}
           returnKeyType="next"
           onSubmitEditing={event => {
             nameInput.focus();
@@ -49,7 +49,7 @@ const SignUp = () => {
             nameInput = input;
           }}
           placeholder={Strings.NAME}
-          leftIcon={{ type: "font-awesome", name: "user" }}
+          rightIcon={{ type: "font-awesome", name: "user" }}
           value={name}
           onChangeText={nameChangeHandler}
         />

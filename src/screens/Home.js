@@ -2,9 +2,15 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
 import { useSelector } from "react-redux";
+import Strings from "../utils/strings";
+import RNTapsellPlus from "react-native-tapsell-plus";
+import Keys from "../utils/tapsellKeys";
+import { useDispatch } from "react-redux";
+import { setIsAdAvailable } from "../redux/actions";
 
 const Home = ({ navigation }) => {
   const { recordCnt } = styles;
+  const dispatch = useDispatch();
   const {
     currentPoint,
     totalPoints,
@@ -14,14 +20,33 @@ const Home = ({ navigation }) => {
   } = useSelector(state => state.pointInfo);
 
   const onStartGamePress = () => {
-    navigation.push("Game");
+    dispatch(setIsAdAvailable(false));
+    RNTapsellPlus.requestRewarded(
+      Keys.RWARD_AD,
+      () => {
+        RNTapsellPlus.showAd(
+          Keys.RWARD_AD,
+          () => {},
+          () => {
+            navigation.push("Game");
+          },
+          () => {
+            navigation.push("Game");
+          },
+          () => {
+            navigation.push("Game");
+          }
+        );
+      },
+      () => {}
+    );
   };
   return (
     <View>
       <Card>
         <View style={recordCnt}>
           <View>
-            <Text>رکورد:</Text>
+            <Text>{Strings.RECORD}</Text>
           </View>
           <View>
             <Text>{record}</Text>
@@ -29,7 +54,7 @@ const Home = ({ navigation }) => {
         </View>
         <View style={recordCnt}>
           <View>
-            <Text>امتیاز در رکورد فعلی:</Text>
+            <Text>{Strings.POINT_IN_RECORD}</Text>
           </View>
           <View>
             <Text>{pointInRecord}</Text>
@@ -38,7 +63,7 @@ const Home = ({ navigation }) => {
 
         <View style={recordCnt}>
           <View>
-            <Text>امتیاز فعلی:</Text>
+            <Text>{Strings.CURRENT_POINT}</Text>
           </View>
           <View>
             <Text>{currentPoint}</Text>
@@ -46,7 +71,7 @@ const Home = ({ navigation }) => {
         </View>
         <View style={recordCnt}>
           <View>
-            <Text>رتبه</Text>
+            <Text>{Strings.RANK}</Text>
           </View>
           <View>
             <Text>{rank}</Text>
@@ -65,8 +90,5 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
-
-
-
 
 export default Home;

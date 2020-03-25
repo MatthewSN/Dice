@@ -19,3 +19,8 @@ export const setIsFetching = isFetching => ({
   type: Types.SET_IS_FETCHING,
   payload: isFetching
 });
+
+export const setIsAdAvailable = isAvailable => ({
+  type: Types.SET_IS_AD_AVAILABLE,
+  payload: isAvailable
+});
