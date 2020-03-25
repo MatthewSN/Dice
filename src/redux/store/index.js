@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 
 const store = createStore(
   combineReducers({
-    pointInfo: pointInfoReducer,
+    pointsInfo: pointInfoReducer,
     user: userReducer,
     appStatus: appStatusReducer
   }),

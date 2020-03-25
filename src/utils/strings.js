@@ -16,5 +16,6 @@ export default {
   EMPTY_FIELD_ERROR: "این فیلد نمی تواند خالی بماند",
   INVALID_PHONE_NUMEBERـERROR: "شماره وارد شده معتبر نمی باشد ",
   VERIFICATION: "اعتبارسنجی",
-  CODE: "کد اعتبارسنجی"
+  CODE: "کد اعتبارسنجی",
+  SCORE: "امتیاز : "
 };

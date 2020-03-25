@@ -6,7 +6,7 @@ import {
   FlatList,
   TouchableHighlight
 } from "react-native";
-import { Card } from "react-native-elements";
+
 
 export default ({ onDiceDimentionPress = () => {}, diceDimentions = [] }) => {
   const { selectedItem, unselectedItem, container } = styles;
