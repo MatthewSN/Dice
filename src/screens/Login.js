@@ -15,7 +15,7 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (codeSent) {
-      navigation.navigate("Verification");
+      navigation.navigate("Verification", { phoneNumber });
     }
   }, [codeSent]);
 

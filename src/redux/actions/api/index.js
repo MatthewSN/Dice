@@ -33,19 +33,20 @@ export const login = phoneNumber => {
 export const signUp = (name, phoneNumber, image) => {
   return async dispatch => {
     try {
-      const response = await HttpRequests.postRequest(
-        Urls.BASE_URL + Urls.SIGN_UP,
-        {
-          PhoneNumber: phoneNumber,
-          Name: name,
-          Image: image
-        }
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.SIGN_UP +
+          HttpRequests.createRequestParams({
+            PhoneNumber: phoneNumber,
+            Name: name
+          }),
+        HttpRequests.postRequest()
       );
+
       const json = await response.json();
+
       if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(
-          Actions.setAppStatus({ ...getState().appStatus, codeSent: true })
-        );
+        dispatch(Actions.setCodeSent(true));
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
@@ -58,20 +59,22 @@ export const signUp = (name, phoneNumber, image) => {
 export const verifyPhoneNumber = (phoneNumber, code) => {
   return async dispatch => {
     try {
-      const response = await HttpRequests.postRequest(
-        Urls.BASE_URL + Urls.VERIFY_PHONE_NUMBER,
-        {
-          PhoneNumber: phoneNumber,
-          Code: code
-        }
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.VERIFY_PHONE_NUMBER +
+          HttpRequests.createRequestParams({
+            PhoneNumber: phoneNumber,
+            Code: code
+          }),
+        HttpRequests.postRequest()
       );
       const json = await response.json();
-      if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(Actions.setUser(json.value));
-        Actions.setAppStatus({ ...getState().appStatus, codeSent: false });
+      const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
+      console.log("info", responseObj.Token);
+      /* if (json.state === ApiResponseState.SUCCESS) {
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
-      }
+      } */
     } catch (e) {
       ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
     }

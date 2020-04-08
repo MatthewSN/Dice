@@ -23,7 +23,7 @@ export const createRequestParams = (params = {}) => {
   let res = "?";
   const paramsKeys = Object.keys(params);
   paramsKeys.forEach(paramKey => {
-    res += paramKey + "=" + params[paramKey];
+    res += paramKey + "=" + params[paramKey] + "&";
   });
   return res;
 };
