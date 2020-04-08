@@ -20,6 +20,11 @@ export default (state = initialState, action) => {
         ...state,
         isAdAvailable: action.payload
       };
+    case Types.SET_CODE_SENT:
+      return {
+        ...state,
+        codeSent: action.payload
+      };
     default:
       return state;
   }

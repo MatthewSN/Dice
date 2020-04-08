@@ -1,5 +1,5 @@
 export default {
-  BASE_URL: "",
+  BASE_URL: "http://194.5.177.27",
   LOGIN: "/api/user/signin",
   SIGN_UP: "/api/user/signup",
   VERIFY_PHONE_NUMBER: "/api/user/verifyPhoneNumber",

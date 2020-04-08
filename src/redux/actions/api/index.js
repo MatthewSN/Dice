@@ -9,21 +9,22 @@ import Strings from "../../../utils/strings";
 export const login = phoneNumber => {
   return async (dispatch, getState) => {
     try {
-      const response = await HttpRequests.postRequest(
-        Urls.BASE_URL + Urls.LOGIN,
-        {
-          PhoneNumber: phoneNumber
-        }
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.LOGIN +
+          HttpRequests.createRequestParams({ PhoneNumber: phoneNumber }),
+        HttpRequests.postRequest()
       );
+
       const json = await response.json();
+
       if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(
-          Actions.setAppStatus({ ...getState().appStatus, codeSent: true })
-        );
+        dispatch(Actions.setCodeSent(true));
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
+      console.log(e.message);
       ToastAndroid.show(Strings.SIGN_UP_ERROR, ToastAndroid.SHORT);
     }
   };

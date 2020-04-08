@@ -3,12 +3,15 @@ import { View, Text, StyleSheet } from "react-native";
 import { Card, Button, Input } from "react-native-elements";
 import Strings from "../utils/strings";
 import validator from "validator";
+import { useDispatch } from "react-redux";
+import { signUp } from "../redux/actions/api";
 
 const SignUp = () => {
   const { inputCnt, messageCnt, messageStyle } = styles;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState(null);
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
 
   let nameInput = null;
 
@@ -25,6 +28,8 @@ const SignUp = () => {
       setMessage(Strings.EMPTY_FIELDS_ERROR);
     } else if (!validator.isMobilePhone(phoneNumber)) {
       setMessage(Strings.INVALID_PHONE_NUMEBERـERROR);
+    } else {
+  
     }
   };
   return (

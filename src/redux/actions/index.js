@@ -24,3 +24,8 @@ export const setIsAdAvailable = isAvailable => ({
   type: Types.SET_IS_AD_AVAILABLE,
   payload: isAvailable
 });
+
+export const setCodeSent = (codeSent = false) => ({
+  type: Types.SET_CODE_SENT,
+  payload: codeSent
+});

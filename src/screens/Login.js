@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Card, Button, Input } from "react-native-elements";
 import Strings from "../utils/strings";
 import validator from "validator";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../redux/actions/api";
 
 const Login = ({ navigation }) => {
   const { inputCnt, txtCnt, messageCnt, messageStyle } = styles;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState(null);
+  const { codeSent } = useSelector(state => state.appStatus);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (codeSent) {
+      navigation.navigate("Verification");
+    }
+  }, [codeSent]);
 
   const onSignUpPress = () => {
     navigation.navigate("SignUp");
@@ -18,6 +28,9 @@ const Login = ({ navigation }) => {
       setMessage(Strings.EMPTY_FIELD_ERROR);
     } else if (!validator.isMobilePhone(phoneNumber)) {
       setMessage(Strings.INVALID_PHONE_NUMEBERـERROR);
+    } else {
+      console.log("here");
+      dispatch(login(phoneNumber));
     }
   };
 
