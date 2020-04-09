@@ -8,7 +8,7 @@ const StackNavigator = createStackNavigator({
   Home: Screens.Home,
 
   Verification: Screens.Verification,
-  SignUp: Screens.SignUp
+  SignUp: Screens.SignUp,
 });
 
 export default createAppContainer(StackNavigator);

@@ -6,7 +6,7 @@ import PointLogStatus from "../../utils/pointLogStatus";
 import { ToastAndroid } from "react-native";
 import Strings from "../../../utils/strings";
 
-export const login = phoneNumber => {
+export const login = (phoneNumber) => {
   return async (dispatch, getState) => {
     try {
       const response = await fetch(
@@ -31,14 +31,14 @@ export const login = phoneNumber => {
 };
 
 export const signUp = (name, phoneNumber, image) => {
-  return async dispatch => {
+  return async (dispatch) => {
     try {
       const response = await fetch(
         Urls.BASE_URL +
           Urls.SIGN_UP +
           HttpRequests.createRequestParams({
             PhoneNumber: phoneNumber,
-            Name: name
+            Name: name,
           }),
         HttpRequests.postRequest()
       );
@@ -57,24 +57,44 @@ export const signUp = (name, phoneNumber, image) => {
 };
 
 export const verifyPhoneNumber = (phoneNumber, code) => {
-  return async dispatch => {
+  return async (dispatch) => {
     try {
       const response = await fetch(
         Urls.BASE_URL +
           Urls.VERIFY_PHONE_NUMBER +
           HttpRequests.createRequestParams({
             PhoneNumber: phoneNumber,
-            Code: code
+            Code: code,
           }),
         HttpRequests.postRequest()
       );
       const json = await response.json();
-      const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
-      console.log("info", responseObj.Token);
-      /* if (json.state === ApiResponseState.SUCCESS) {
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
+        const {
+          Token: token,
+          Name: name,
+          Point: point,
+          PointInRecord: pointInRecord,
+          Rank: rank,
+          Record: record,
+          Image: image,
+        } = responseObj;
+        dispatch(
+          Actions.setUserInfo({
+            point,
+            pointInRecord,
+            rank,
+            record,
+            token,
+            name,
+            image,
+          })
+        );
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
-      } */
+      }
     } catch (e) {
       ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
     }
@@ -82,7 +102,7 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
 };
 
 export const finishGame = () => {
-  return async dispatch => {
+  return async (dispatch) => {
     try {
       const response = await HttpRequests.postRequest(
         Urls.BASE_URL + Urls.FINISH_GAME
@@ -102,13 +122,13 @@ export const finishGame = () => {
   };
 };
 
-export const logPoint = status => {
-  return async dispatch => {
+export const logPoint = (status) => {
+  return async (dispatch) => {
     try {
       const response = await HttpRequests.postRequest(
         Urls.BASE_URL + Urls.LOG_POINT,
         {
-          Status: status
+          Status: status,
         }
       );
     } catch (e) {}
@@ -132,7 +152,7 @@ export const getUser = () => {
 };
 
 export const getPointInfo = () => {
-  return dispatch => {
+  return (dispatch) => {
     return async (dispatch, getState) => {
       try {
         const { token } = getState();
@@ -162,7 +182,7 @@ export const getPoint = () => {
         dispatch(
           Actions.setAppStatus({
             ...getState().appStatus,
-            points: getState().appStatus.points + json.value
+            points: getState().appStatus.points + json.value,
           })
         );
       }
