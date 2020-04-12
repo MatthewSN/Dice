@@ -5,7 +5,8 @@ const initialState = {
   gameFinished: false,
   points: 0,
   isFetching: false,
-  isAdAvailable: false
+  isAdAvailable: false,
+  shouldReloadHomeScene: true,
 };
 
 export default (state = initialState, action) => {
@@ -13,17 +14,22 @@ export default (state = initialState, action) => {
     case Types.SET_IS_FETCHING:
       return {
         ...state,
-        isFetching: action.payload
+        isFetching: action.payload,
       };
     case Types.SET_IS_AD_AVAILABLE:
       return {
         ...state,
-        isAdAvailable: action.payload
+        isAdAvailable: action.payload,
       };
     case Types.SET_CODE_SENT:
       return {
         ...state,
-        codeSent: action.payload
+        codeSent: action.payload,
+      };
+    case Types.SET_SHOULD_RELOAD_HOME_SCENE:
+      return {
+        ...state,
+        shouldReloadHomeScene: action.payload,
       };
     default:
       return state;

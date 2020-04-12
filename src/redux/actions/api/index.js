@@ -5,6 +5,7 @@ import ApiResponseState from "../../utils/responseState";
 import PointLogStatus from "../../utils/pointLogStatus";
 import { ToastAndroid } from "react-native";
 import Strings from "../../../utils/strings";
+import axios from "axios";
 
 export const login = (phoneNumber) => {
   return async (dispatch, getState) => {
@@ -72,21 +73,9 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
 
       if (json.state === ApiResponseState.SUCCESS) {
         const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
-        const {
-          Token: token,
-          Name: name,
-          Point: point,
-          PointInRecord: pointInRecord,
-          Rank: rank,
-          Record: record,
-          Image: image,
-        } = responseObj;
+        const { Token: token, Name: name, Image: image } = responseObj;
         dispatch(
           Actions.setUserInfo({
-            point,
-            pointInRecord,
-            rank,
-            record,
             token,
             name,
             image,
@@ -102,14 +91,14 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
 };
 
 export const finishGame = () => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     try {
-      const response = await HttpRequests.postRequest(
-        Urls.BASE_URL + Urls.FINISH_GAME
+      const response = await fetch(
+        Urls.BASE_URL + Urls.FINISH_GAME,
+        HttpRequests.postRequest(getState().user.token)
       );
       const json = await response.json();
       if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(Actions.setUser(json.value));
         Actions.setAppStatus({ ...getState().appStatus, gameFinished: true });
       }
     } catch (e) {
@@ -152,20 +141,41 @@ export const getUser = () => {
 };
 
 export const getPointInfo = () => {
-  return (dispatch) => {
-    return async (dispatch, getState) => {
-      try {
-        const { token } = getState();
-        const response = await HttpRequests.getRequest(
-          Urls.BASE_URL + Urls.GET_POINT_INFO,
-          token
+  return async (dispatch, getState) => {
+    try {
+      const { token } = getState().user;
+      const response = await fetch(
+        Urls.BASE_URL + Urls.GET_POINTS_INFO,
+        HttpRequests.getRequest(token)
+      );
+      const json = await response.json();
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
+        const {
+          CurrentPoint: currentPoint,
+          PointInRecord: pointInRecord,
+          Rank: rank,
+          Record: record,
+          TotalPoints: totalPoints,
+        } = responseObj;
+
+        dispatch(
+          Actions.setPointsInfo({
+            currentPoint,
+            pointInRecord,
+            rank,
+            record,
+            totalPoints,
+          })
         );
-        const json = await response.json();
-        if (json.state === ApiResponseState.SUCCESS) {
-          dispatch(Actions.setPointsInfo(json.value));
-        }
-      } catch (e) {}
-    };
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
+      }
+    } catch (e) {
+      ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
+      console.log("EEEEEEEEEEEEEEEEEEE");
+    }
   };
 };
 

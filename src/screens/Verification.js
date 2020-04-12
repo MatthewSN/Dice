@@ -14,22 +14,34 @@ class Verification extends React.Component {
     this.onVerifyPress = this.onVerifyPress.bind(this);
     this.state = {
       message: null,
-      code: ""
+      code: "",
     };
   }
   componentWillUnmount() {
     this.props.dispatch(setCodeSent(false));
   }
+  componentDidMount() {
+    console.log("token", this.props.token);
+    this.redirectToHomeScene();
+  }
+  componentDidUpdate() {
+    this.redirectToHomeScene();
+  }
+  redirectToHomeScene() {
+    if (this.props.token) {
+      this.props.navigation.navigate("Home");
+    }
+  }
   onCodeChange(text) {
     if (validator.isInt(text) || text === "") {
-      this.setState(state => ({ ...state, code: text }));
+      this.setState((state) => ({ ...state, code: text }));
     }
   }
   onVerifyPress() {
     if (this.state.code === "") {
-      this.setState(state => ({
+      this.setState((state) => ({
         ...state,
-        message: Strings.EMPTY_FIELD_ERROR
+        message: Strings.EMPTY_FIELD_ERROR,
       }));
     } else {
       this.props.dispatch(
@@ -110,21 +122,25 @@ class Verification extends React.Component {
 }; */
 
 Verification.navigationOptions = {
-  headerTitle: Strings.VERIFICATION
+  headerTitle: Strings.VERIFICATION,
 };
 
 const styles = StyleSheet.create({
   margin: {
-    marginBottom: 30
+    marginBottom: 30,
   },
   messageCnt: {
     width: "100%",
     alignItems: "center",
-    marginBottom: 20
+    marginBottom: 20,
   },
   messageStyle: {
-    fontWeight: "700"
-  }
+    fontWeight: "700",
+  },
 });
 
-export default connect()(Verification);
+const mapStateToProps = (state) => ({
+  token: state.user.token,
+});
+
+export default connect(mapStateToProps)(Verification);

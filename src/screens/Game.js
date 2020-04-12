@@ -21,37 +21,38 @@ const Game = () => {
     btnCnt,
     scoreSection,
     scoreText,
-    scoreCnt
+    scoreCnt,
   } = styles;
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
   const [diceDimentions, setDiceDimentions] = useState(diceList);
   const [selectedItems, setSelectedItems] = useState([]);
-  const { isFetching, points } = useSelector(state => state.appStatus);
-  const { currentPoint } = useSelector(state => state.pointsInfo);
+  const [roll, setRoll] = useState(false);
+  const [currentPoint, setCurrentPoint] = useState(0);
+  const { isFetching, points } = useSelector((state) => state.appStatus);
+
   const dispatch = useDispatch();
 
-  const onDiceDimentionPress = id => {
-    const itemIndex = diceDimentions.findIndex(item => item.id === id);
+  const onDiceDimentionPress = (id) => {
+    const itemIndex = diceDimentions.findIndex((item) => item.id === id);
     const item = diceDimentions[itemIndex];
     let updatedItem = { ...item };
     let updatedSelectedItems = [...selectedItems];
     if (selectedItemsCount < 3 && !item.isSlected) {
       updatedItem = {
         ...item,
-        isSlected: true
+        isSlected: true,
       };
       setSelectedItemsCount(selectedItemsCount + 1);
       updatedSelectedItems.push(item.id);
     } else if (item.isSlected) {
       updatedItem = {
         ...item,
-        isSlected: false
+        isSlected: false,
       };
       setSelectedItemsCount(selectedItemsCount - 1);
-      updatedSelectedItems = selectedItems.filter(id => id != item.id);
+      updatedSelectedItems = selectedItems.filter((id) => id != item.id);
     }
     setSelectedItems(updatedSelectedItems);
-    console.log(updatedSelectedItems);
     const updatedList = [...diceDimentions];
     updatedList[itemIndex] = updatedItem;
 
@@ -59,8 +60,19 @@ const Game = () => {
   };
 
   const onRollTheDicePress = () => {
-    dispatch(getPoint());
-    dispatch(setIsFetching(!isFetching));
+    setRoll(true);
+  };
+
+  const onRollingEnd = (result = 1) => {
+    setRoll(false);
+    const resultInSelectedIndex = selectedItems.findIndex(
+      (item) => parseInt(item) === result
+    );
+    if (resultInSelectedIndex != -1) {
+      setCurrentPoint(currentPoint + 1);
+    }
+    console.log(resultInSelectedIndex);
+    console.log(selectedItems);
   };
 
   return (
@@ -75,7 +87,7 @@ const Game = () => {
       </View>
       <ScrollView>
         <View style={section1}>
-          <DiceLoader />
+          <DiceLoader maxRoll={5} roll={roll} onRollingEnd={onRollingEnd} />
           <View style={btnCnt}>
             <Button
               disabled={
@@ -104,7 +116,7 @@ const Game = () => {
 };
 
 Game.navigationOptions = {
-  header: () => null
+  header: () => null,
 };
 
 const styles = StyleSheet.create({
@@ -117,50 +129,50 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 1,
     elevation: 5,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   section1: {
     width: "100%",
     height: DEVICE_HEIGHT / 2,
     minHeight: 280,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   section2: {
     width: "100%",
     height: DEVICE_HEIGHT / 2,
-    minHeight: 320
+    minHeight: 320,
   },
   textCnt: {
-    alignItems: "center"
+    alignItems: "center",
   },
   txt: {
     fontWeight: "700",
     fontSize: 30,
-    color: "black"
+    color: "black",
   },
   btnCnt: {
     shadowOpacity: 0.9,
     shadowRadius: 3,
     shadowOffset: {
       height: 5,
-      width: 1
+      width: 1,
     },
     elevation: 5,
     shadowColor: "black",
-    width: 200
+    width: 200,
   },
 
   mainCnt: {
-    backgroundColor: "#a7334c"
+    backgroundColor: "#a7334c",
   },
   scoreText: {
     fontWeight: "700",
-    fontSize: 20
+    fontSize: 20,
   },
   scoreCnt: {
-    margin: 20
-  }
+    margin: 20,
+  },
 });
 
 export default Game;

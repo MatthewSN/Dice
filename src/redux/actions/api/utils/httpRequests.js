@@ -1,28 +1,27 @@
-export const postRequest = token => {
+export const postRequest = (token) => {
   return {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      Token: token
-    }
+      Token: token,
+    },
   };
 };
 
-export const getRequest = (url, token) => {
-  const request = new Request(url, {
+export const getRequest = (token) => {
+  return {
     method: "GET",
     headers: {
-      Token: token
+      "Content-Type": "application/json",
+      Token: token,
     },
-    body: formData
-  });
-  return fetch(request);
+  };
 };
 
 export const createRequestParams = (params = {}) => {
   let res = "?";
   const paramsKeys = Object.keys(params);
-  paramsKeys.forEach(paramKey => {
+  paramsKeys.forEach((paramKey) => {
     res += paramKey + "=" + params[paramKey] + "&";
   });
   return res;

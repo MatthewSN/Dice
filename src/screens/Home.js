@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
-import { useSelector } from "react-redux";
 import Strings from "../utils/strings";
 import RNTapsellPlus from "react-native-tapsell-plus";
 import Keys from "../utils/tapsellKeys";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setIsAdAvailable } from "../redux/actions";
+import { getPointInfo } from "../redux/actions/api";
+import { useIsFocused } from "@react-navigation/native";
 
 const Home = ({ navigation }) => {
   const { recordCnt } = styles;
@@ -16,8 +17,16 @@ const Home = ({ navigation }) => {
     totalPoints,
     rank,
     record,
-    pointInRecord
-  } = useSelector(state => state.pointInfo);
+    pointInRecord,
+  } = useSelector((state) => {
+    return state.pointsInfo;
+  });
+  const isFocusedOnScene = useIsFocused();
+  useEffect(() => {
+    if (isFocusedOnScene) {
+      dispatch(getPointInfo());
+    }
+  }, [isFocusedOnScene]);
 
   const onStartGamePress = () => {
     dispatch(setIsAdAvailable(false));
@@ -66,7 +75,7 @@ const Home = ({ navigation }) => {
             <Text>{Strings.CURRENT_POINT}</Text>
           </View>
           <View>
-            <Text>{currentPoint}</Text>
+            <Text>{totalPoints}</Text>
           </View>
         </View>
         <View style={recordCnt}>
@@ -87,8 +96,8 @@ const styles = StyleSheet.create({
   recordCnt: {
     borderBottomColor: "black",
     borderBottomWidth: 1,
-    marginBottom: 20
-  }
+    marginBottom: 20,
+  },
 });
 
 export default Home;

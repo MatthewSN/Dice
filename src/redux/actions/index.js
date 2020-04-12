@@ -29,3 +29,8 @@ export const setCodeSent = (codeSent = false) => ({
   type: Types.SET_CODE_SENT,
   payload: codeSent,
 });
+
+export const setShouldReloadHomeScene = (shouldReload = false) => ({
+  type: Types.SET_CODE_SENT,
+  payload: shouldReload,
+});
