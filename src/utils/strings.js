@@ -17,5 +17,9 @@ export default {
   INVALID_PHONE_NUMEBERـERROR: "شماره وارد شده معتبر نمی باشد ",
   VERIFICATION: "اعتبارسنجی",
   CODE: "کد اعتبارسنجی",
-  SCORE: "امتیاز : "
+  SCORE: "امتیاز : ",
+  NUMBER_OF_CORRECT_GUESSES: "تعداد حدس های درست: ",
+  WILL_YOU_CONTINUE: "آیا ادامه می دهید؟",
+  YES: "بله",
+  FINISHE_THE_GAME: "اتمام بازی",
 };

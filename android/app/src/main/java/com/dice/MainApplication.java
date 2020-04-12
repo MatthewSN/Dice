@@ -1,5 +1,4 @@
 package com.dice;
-import com.RNFetchBlob.RNFetchBlobPackage;
 import android.app.Application;
 
 import com.facebook.react.PackageList;

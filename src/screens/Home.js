@@ -7,7 +7,6 @@ import Keys from "../utils/tapsellKeys";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsAdAvailable } from "../redux/actions";
 import { getPointInfo } from "../redux/actions/api";
-import { useIsFocused } from "@react-navigation/native";
 
 const Home = ({ navigation }) => {
   const { recordCnt } = styles;
@@ -21,12 +20,10 @@ const Home = ({ navigation }) => {
   } = useSelector((state) => {
     return state.pointsInfo;
   });
-  const isFocusedOnScene = useIsFocused();
+
   useEffect(() => {
-    if (isFocusedOnScene) {
-      dispatch(getPointInfo());
-    }
-  }, [isFocusedOnScene]);
+    dispatch(getPointInfo());
+  }, []);
 
   const onStartGamePress = () => {
     dispatch(setIsAdAvailable(false));

@@ -6,7 +6,7 @@ const initialState = {
   points: 0,
   isFetching: false,
   isAdAvailable: false,
-  shouldReloadHomeScene: true,
+  shouldGetScoreInfo: true,
 };
 
 export default (state = initialState, action) => {
@@ -26,10 +26,10 @@ export default (state = initialState, action) => {
         ...state,
         codeSent: action.payload,
       };
-    case Types.SET_SHOULD_RELOAD_HOME_SCENE:
+    case Types.SET_SHOULD_GET_SCORE_INFO:
       return {
         ...state,
-        shouldReloadHomeScene: action.payload,
+        shouldGetScoreInfo: action.payload,
       };
     default:
       return state;

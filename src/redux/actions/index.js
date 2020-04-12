@@ -30,7 +30,7 @@ export const setCodeSent = (codeSent = false) => ({
   payload: codeSent,
 });
 
-export const setShouldReloadHomeScene = (shouldReload = false) => ({
-  type: Types.SET_CODE_SENT,
-  payload: shouldReload,
+export const setShouldGetScoreInfo = (shouldFetch = false) => ({
+  type: Types.SET_SHOULD_GET_SCORE_INFO,
+  payload: shouldFetch,
 });

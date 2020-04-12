@@ -9,7 +9,6 @@ MERGED from [:expo-permissions] /home/matthew/Documents/reactNative/Dice/node_mo
 MERGED from [:react-native-screens] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-fetch-blob] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -201,8 +200,6 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:26:22-70
 application
 ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:29:5-50:19
-MERGED from [:react-native-fetch-blob] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
-MERGED from [:react-native-fetch-blob] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/AndroidManifest.xml:22:5-20
@@ -295,8 +292,6 @@ MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNati
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-fetch-blob] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-fetch-blob] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41

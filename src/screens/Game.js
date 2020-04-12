@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Dimensions,
+  Alert,
+} from "react-native";
 import diceList from "../utils/dataLists/diceList";
 import DiceDimentions from "../components/DiceDimentions";
 import { Button } from "react-native-elements";
 import { useSelector, useDispatch } from "react-redux";
 import { setIsFetching } from "../redux/actions";
-import { getPoint } from "../redux/actions/api";
+import { logPoint, finishGame } from "../redux/actions/api";
 import DiceLoader from "../components/DiceLoader";
 import Strings from "../utils/strings";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
-const Game = () => {
+const Game = ({ navigation }) => {
   const {
     mainCnt,
     section2,
@@ -31,6 +38,17 @@ const Game = () => {
   const { isFetching, points } = useSelector((state) => state.appStatus);
 
   const dispatch = useDispatch();
+
+  const resetSelectedDices = () => {
+    setSelectedItemsCount(0);
+    setSelectedItems([]);
+    const updatedDiceDimentions = [...diceDimentions];
+    updatedDiceDimentions.forEach((dice) => {
+      dice.isSlected = false;
+    });
+
+    setDiceDimentions(updatedDiceDimentions);
+  };
 
   const onDiceDimentionPress = (id) => {
     const itemIndex = diceDimentions.findIndex((item) => item.id === id);
@@ -68,19 +86,52 @@ const Game = () => {
     const resultInSelectedIndex = selectedItems.findIndex(
       (item) => parseInt(item) === result
     );
-    if (resultInSelectedIndex != -1) {
+    if (resultInSelectedIndex == -1) {
+      dispatch(logPoint(1));
+      goBackToHomeScene();
+    } else {
       setCurrentPoint(currentPoint + 1);
+      dispatch(logPoint(0));
+      openAlertWindow();
     }
     console.log(resultInSelectedIndex);
     console.log(selectedItems);
   };
-
+  const openAlertWindow = () => {
+    Alert.alert(
+      "؟",
+      Strings.WILL_YOU_CONTINUE,
+      [
+        {
+          text: Strings.YES,
+          onPress: () => {
+            resetSelectedDices();
+          },
+          style: "cancel",
+        },
+        {
+          text: Strings.FINISHE_THE_GAME,
+          onPress: () => {
+            endTheGame();
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+  const endTheGame = () => {
+    dispatch(finishGame());
+    goBackToHomeScene();
+  };
+  const goBackToHomeScene = () => {
+    navigation.pop();
+  };
   return (
     <View style={mainCnt}>
       <View style={scoreSection}>
         <View style={scoreCnt}>
           <Text style={scoreText}>
-            {Strings.SCORE}
+            {Strings.NUMBER_OF_CORRECT_GUESSES}
             {currentPoint}
           </Text>
         </View>
@@ -90,9 +141,7 @@ const Game = () => {
           <DiceLoader maxRoll={5} roll={roll} onRollingEnd={onRollingEnd} />
           <View style={btnCnt}>
             <Button
-              disabled={
-                selectedItemsCount === 3 && isFetching == false ? false : true
-              }
+              disabled={selectedItemsCount < 3}
               onPress={onRollTheDicePress}
               title="انداختن تاس"
             />

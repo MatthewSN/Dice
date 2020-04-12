@@ -5,5 +5,5 @@ export default {
   SET_IS_FETCHING: "set is fetching",
   SET_IS_AD_AVAILABLE: "set is ad available",
   SET_CODE_SENT: "set code sent",
-  SET_SHOULD_RELOAD_HOME_SCENE: "set should reload home scene",
+  SET_SHOULD_GET_SCORE_INFO: "set should get score info",
 };

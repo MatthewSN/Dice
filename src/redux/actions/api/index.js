@@ -93,13 +93,18 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
 export const finishGame = () => {
   return async (dispatch, getState) => {
     try {
+      const { token } = getState().user;
       const response = await fetch(
         Urls.BASE_URL + Urls.FINISH_GAME,
-        HttpRequests.postRequest(getState().user.token)
+        HttpRequests.getRequest(token)
       );
+      console.log(response);
       const json = await response.json();
+
       if (json.state === ApiResponseState.SUCCESS) {
-        Actions.setAppStatus({ ...getState().appStatus, gameFinished: true });
+        console.log("finish was successful");
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
       Toast.makeText(
@@ -112,15 +117,26 @@ export const finishGame = () => {
 };
 
 export const logPoint = (status) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     try {
-      const response = await HttpRequests.postRequest(
-        Urls.BASE_URL + Urls.LOG_POINT,
-        {
-          Status: status,
-        }
+      const { token } = getState().user;
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.LOG_POINT +
+          HttpRequests.createRequestParams({ Status: status }),
+        HttpRequests.postRequest(token)
       );
-    } catch (e) {}
+      console.log(response);
+      const json = await response.json();
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        console.log("log was successful");
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
   };
 };
 

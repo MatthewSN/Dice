@@ -3,8 +3,9 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 const StackNavigator = createStackNavigator({
-  Home: Screens.Home,
   Game: Screens.Game,
+  Home: Screens.Home,
+
   Login: Screens.Login,
   Verification: Screens.Verification,
   SignUp: Screens.SignUp,
