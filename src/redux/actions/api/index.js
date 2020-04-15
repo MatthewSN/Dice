@@ -98,7 +98,7 @@ export const finishGame = () => {
         Urls.BASE_URL + Urls.FINISH_GAME,
         HttpRequests.getRequest(token)
       );
-      console.log(response);
+
       const json = await response.json();
 
       if (json.state === ApiResponseState.SUCCESS) {
@@ -107,11 +107,11 @@ export const finishGame = () => {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
-      Toast.makeText(
+      /*    Toast.makeText(
         GameActivity.this,
         "Error in register points",
         Toast.LENGTH_LONG
-      ).show();
+      ).show(); */
     }
   };
 };

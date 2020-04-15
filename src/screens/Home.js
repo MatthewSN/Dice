@@ -6,7 +6,7 @@ import RNTapsellPlus from "react-native-tapsell-plus";
 import Keys from "../utils/tapsellKeys";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsAdAvailable } from "../redux/actions";
-import { getPointInfo } from "../redux/actions/api";
+import { getPointInfo, logPoint } from "../redux/actions/api";
 
 const Home = ({ navigation }) => {
   const { recordCnt } = styles;
@@ -22,7 +22,9 @@ const Home = ({ navigation }) => {
   });
 
   useEffect(() => {
-    dispatch(getPointInfo());
+    navigation.addListener("didFocus", () => {
+      dispatch(getPointInfo());
+    });
   }, []);
 
   const onStartGamePress = () => {
@@ -37,7 +39,7 @@ const Home = ({ navigation }) => {
             navigation.push("Game");
           },
           () => {
-            navigation.push("Game");
+            dispatch(logPoint(0));
           },
           () => {
             navigation.push("Game");
