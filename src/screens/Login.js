@@ -10,7 +10,7 @@ const Login = ({ navigation }) => {
   const { inputCnt, txtCnt, messageCnt, messageStyle } = styles;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState(null);
-  const { codeSent } = useSelector(state => state.appStatus);
+  const { codeSent } = useSelector((state) => state.appStatus);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const phoneNumberChangeHandler = text => {
+  const phoneNumberChangeHandler = (text) => {
     if (validator.isInt(text) || text === "") {
       setPhoneNumber(text);
     }
@@ -71,25 +71,25 @@ const Login = ({ navigation }) => {
 };
 
 Login.navigationOptions = {
-  headerTitle: Strings.LOGIN
+  headerTitle: Strings.LOGIN,
 };
 
 const styles = StyleSheet.create({
   inputCnt: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   txtCnt: {
     width: "100%",
-    alignItems: "center"
+    alignItems: "center",
   },
   messageCnt: {
     width: "100%",
     alignItems: "center",
-    marginBottom: 20
+    marginBottom: 20,
   },
   messageStyle: {
-    fontWeight: "700"
-  }
+    fontWeight: "700",
+  },
 });
 
 export default Login;

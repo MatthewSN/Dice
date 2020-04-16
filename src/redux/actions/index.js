@@ -34,3 +34,13 @@ export const setShouldGetScoreInfo = (shouldFetch = false) => ({
   type: Types.SET_SHOULD_GET_SCORE_INFO,
   payload: shouldFetch,
 });
+
+export const setIsAuth = (isAuth) => ({
+  type: Types.SET_IS_AUTH,
+  payload: isAuth,
+});
+
+export const setToken = (token = "") => ({
+  type: Types.SET_TOKEN,
+  payload: token,
+});

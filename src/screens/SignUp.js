@@ -12,7 +12,7 @@ const SignUp = ({ navigation }) => {
   const [message, setMessage] = useState(null);
   const [name, setName] = useState("");
   const dispatch = useDispatch();
-  const { codeSent } = useSelector(state => state.appStatus);
+  const { codeSent } = useSelector((state) => state.appStatus);
 
   let nameInput = null;
 
@@ -22,12 +22,12 @@ const SignUp = ({ navigation }) => {
     }
   }, [codeSent]);
 
-  const phoneNumberChangeHandler = text => {
+  const phoneNumberChangeHandler = (text) => {
     if (validator.isInt(text) || text === "") {
       setPhoneNumber(text);
     }
   };
-  const nameChangeHandler = text => {
+  const nameChangeHandler = (text) => {
     setName(text);
   };
   const onSignUpPress = () => {
@@ -46,7 +46,7 @@ const SignUp = ({ navigation }) => {
           placeholder={Strings.PHONE_NUMBER}
           rightIcon={{ type: "font-awesome", name: "mobile-phone" }}
           returnKeyType="next"
-          onSubmitEditing={event => {
+          onSubmitEditing={(event) => {
             nameInput.focus();
           }}
           keyboardType="numeric"
@@ -57,7 +57,7 @@ const SignUp = ({ navigation }) => {
       </View>
       <View style={inputCnt}>
         <Input
-          ref={input => {
+          ref={(input) => {
             nameInput = input;
           }}
           placeholder={Strings.NAME}
@@ -79,21 +79,21 @@ const SignUp = ({ navigation }) => {
 };
 
 SignUp.navigationOptions = {
-  headerTitle: Strings.REGISTER
+  headerTitle: Strings.REGISTER,
 };
 
 const styles = StyleSheet.create({
   inputCnt: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   messageCnt: {
     width: "100%",
     alignItems: "center",
-    marginBottom: 20
+    marginBottom: 20,
   },
   messageStyle: {
-    fontWeight: "700"
-  }
+    fontWeight: "700",
+  },
 });
 
 export default SignUp;

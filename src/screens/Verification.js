@@ -21,7 +21,6 @@ class Verification extends React.Component {
     this.props.dispatch(setCodeSent(false));
   }
   componentDidMount() {
-    console.log("token", this.props.token);
     this.redirectToHomeScene();
   }
   componentDidUpdate() {
@@ -45,10 +44,7 @@ class Verification extends React.Component {
       }));
     } else {
       this.props.dispatch(
-        verifyPhoneNumber(
-          this.props.navigation.getParam("phoneNumber"),
-          this.state.code
-        )
+        verifyPhoneNumber(this.props.route.params.phoneNumber, this.state.code)
       );
     }
   }

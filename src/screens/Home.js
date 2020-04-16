@@ -22,6 +22,7 @@ const Home = ({ navigation }) => {
   });
 
   useEffect(() => {
+    dispatch(getPointInfo());
     navigation.addListener("didFocus", () => {
       dispatch(getPointInfo());
     });

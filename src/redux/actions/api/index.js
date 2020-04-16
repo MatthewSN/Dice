@@ -5,7 +5,7 @@ import ApiResponseState from "../../utils/responseState";
 import PointLogStatus from "../../utils/pointLogStatus";
 import { ToastAndroid } from "react-native";
 import Strings from "../../../utils/strings";
-import axios from "axios";
+import { AsyncStorage } from "react-native";
 
 export const login = (phoneNumber) => {
   return async (dispatch, getState) => {
@@ -74,6 +74,7 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
       if (json.state === ApiResponseState.SUCCESS) {
         const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
         const { Token: token, Name: name, Image: image } = responseObj;
+        AsyncStorage.setItem("token", token);
         dispatch(
           Actions.setUserInfo({
             token,
