@@ -4,10 +4,12 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
+MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-permissions] /home/matthew/Documents/reactNative/Dice/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-screens] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -282,6 +284,8 @@ uses-sdk
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:expo-permissions] /home/matthew/Documents/reactNative/Dice/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -290,6 +294,8 @@ MERGED from [:react-native-screens] /home/matthew/Documents/reactNative/Dice/nod
 MERGED from [:react-native-screens] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-react-native-adapter] /home/matthew/Documents/reactNative/Dice/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41

@@ -9,7 +9,13 @@ import { setIsAdAvailable } from "../redux/actions";
 import { getPointInfo, logPoint } from "../redux/actions/api";
 
 const Home = ({ navigation }) => {
-  const { recordCnt } = styles;
+  const {
+    recordCnt,
+    container,
+    cardTitle,
+    numbersStyle,
+    numberTitleStyle,
+  } = styles;
   const dispatch = useDispatch();
   const {
     currentPoint,
@@ -52,42 +58,44 @@ const Home = ({ navigation }) => {
   };
   return (
     <View>
-      <Card>
-        <View style={recordCnt}>
-          <View>
-            <Text>{Strings.RECORD}</Text>
+      <View style={container}>
+        <Card titleStyle={cardTitle} title={Strings.YOUR_POINTS}>
+          <View style={recordCnt}>
+            <View>
+              <Text style={numberTitleStyle}>{Strings.RECORD}</Text>
+            </View>
+            <View>
+              <Text style={numbersStyle}>{record}</Text>
+            </View>
           </View>
-          <View>
-            <Text>{record}</Text>
+          <View style={recordCnt}>
+            <View>
+              <Text style={numberTitleStyle}>{Strings.POINT_IN_RECORD}</Text>
+            </View>
+            <View>
+              <Text style={numbersStyle}>{pointInRecord}</Text>
+            </View>
           </View>
-        </View>
-        <View style={recordCnt}>
-          <View>
-            <Text>{Strings.POINT_IN_RECORD}</Text>
-          </View>
-          <View>
-            <Text>{pointInRecord}</Text>
-          </View>
-        </View>
 
-        <View style={recordCnt}>
-          <View>
-            <Text>{Strings.CURRENT_POINT}</Text>
+          <View style={recordCnt}>
+            <View>
+              <Text style={numberTitleStyle}>{Strings.CURRENT_POINT}</Text>
+            </View>
+            <View>
+              <Text style={numbersStyle}>{currentPoint}</Text>
+            </View>
           </View>
-          <View>
-            <Text>{totalPoints}</Text>
+          <View style={recordCnt}>
+            <View>
+              <Text style={numberTitleStyle}>{Strings.RANK}</Text>
+            </View>
+            <View>
+              <Text style={numbersStyle}>{rank}</Text>
+            </View>
           </View>
-        </View>
-        <View style={recordCnt}>
-          <View>
-            <Text>{Strings.RANK}</Text>
-          </View>
-          <View>
-            <Text>{rank}</Text>
-          </View>
-        </View>
-        <Button onPress={onStartGamePress} title="شروع بازی" />
-      </Card>
+          <Button onPress={onStartGamePress} title={Strings.START_THE_GAME} />
+        </Card>
+      </View>
     </View>
   );
 };
@@ -97,6 +105,22 @@ const styles = StyleSheet.create({
     borderBottomColor: "black",
     borderBottomWidth: 1,
     marginBottom: 20,
+  },
+  container: {
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+  },
+  cardTitle: {
+    fontSize: 20,
+  },
+  numbersStyle: {
+    fontSize: 20,
+    fontWeight: "500",
+  },
+  numberTitleStyle: {
+    fontSize: 15,
+    fontWeight: "700",
   },
 });
 

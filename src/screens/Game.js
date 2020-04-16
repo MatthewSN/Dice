@@ -29,6 +29,7 @@ const Game = ({ navigation }) => {
     scoreSection,
     scoreText,
     scoreCnt,
+    buttonTitleStyle,
   } = styles;
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
   const [diceDimentions, setDiceDimentions] = useState(diceList);
@@ -141,9 +142,10 @@ const Game = ({ navigation }) => {
           <DiceLoader maxRoll={5} roll={roll} onRollingEnd={onRollingEnd} />
           <View style={btnCnt}>
             <Button
+              titleStyle={buttonTitleStyle}
               disabled={selectedItemsCount < 3}
               onPress={onRollTheDicePress}
-              title="انداختن تاس"
+              title={Strings.ROLL_THE_DICE}
             />
           </View>
         </View>
@@ -221,6 +223,10 @@ const styles = StyleSheet.create({
   },
   scoreCnt: {
     margin: 20,
+  },
+  buttonTitleStyle: {
+    fontWeight: "700",
+    fontSize: 20,
   },
 });
 

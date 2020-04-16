@@ -4,9 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 //import { createStackNavigator } from "react-navigation-stack";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector, useDispatch } from "react-redux";
-import { AsyncStorage } from "react-native";
 import { setToken } from "../redux/actions";
-
+import AsyncStorage from "@react-native-community/async-storage";
 const Stack = createStackNavigator();
 
 const Navigation = () => {

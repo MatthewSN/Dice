@@ -5,7 +5,7 @@ import ApiResponseState from "../../utils/responseState";
 import PointLogStatus from "../../utils/pointLogStatus";
 import { ToastAndroid } from "react-native";
 import Strings from "../../../utils/strings";
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 
 export const login = (phoneNumber) => {
   return async (dispatch, getState) => {

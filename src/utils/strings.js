@@ -22,4 +22,5 @@ export default {
   WILL_YOU_CONTINUE: "آیا ادامه می دهید؟",
   YES: "بله",
   FINISHE_THE_GAME: "اتمام بازی",
+  YOUR_POINTS: "امتیازات",
 };
