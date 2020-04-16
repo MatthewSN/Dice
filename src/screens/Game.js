@@ -15,6 +15,7 @@ import { setIsFetching } from "../redux/actions";
 import { logPoint, finishGame } from "../redux/actions/api";
 import DiceLoader from "../components/DiceLoader";
 import Strings from "../utils/strings";
+import GamePlayingStates from "../utils/gamePlayingStates";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
@@ -36,7 +37,9 @@ const Game = ({ navigation }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [roll, setRoll] = useState(false);
   const [currentPoint, setCurrentPoint] = useState(0);
-  const { isFetching, points } = useSelector((state) => state.appStatus);
+  const [gamePlayingState, setGamePlayingState] = useState(
+    GamePlayingStates.PLAYING
+  );
 
   const dispatch = useDispatch();
 
@@ -47,7 +50,7 @@ const Game = ({ navigation }) => {
     updatedDiceDimentions.forEach((dice) => {
       dice.isSlected = false;
     });
-
+    setGamePlayingState(GamePlayingStates.PLAYING);
     setDiceDimentions(updatedDiceDimentions);
   };
 
@@ -80,6 +83,7 @@ const Game = ({ navigation }) => {
 
   const onRollTheDicePress = () => {
     setRoll(true);
+    setGamePlayingState(GamePlayingStates.ROLLING);
   };
 
   const onRollingEnd = (result = 1) => {
@@ -89,9 +93,11 @@ const Game = ({ navigation }) => {
     );
     if (resultInSelectedIndex == -1) {
       dispatch(logPoint(1));
+      setGamePlayingState(GamePlayingStates.LOST);
       goBackToHomeScene();
     } else {
       setCurrentPoint(currentPoint + 1);
+      setGamePlayingState(GamePlayingStates.WON);
       dispatch(logPoint(0));
       openAlertWindow();
     }
@@ -150,13 +156,19 @@ const Game = ({ navigation }) => {
           </View>
         </View>
 
-        <View pointerEvents={isFetching ? "none" : "auto"} style={section2}>
+        <View
+          pointerEvents={
+            gamePlayingState !== GamePlayingStates.PLAYING ? "none" : "auto"
+          }
+          style={section2}
+        >
           <View style={textCnt}>
             <Text style={txt}>{Strings.CHOOSE_THREE_DIMENTIONS} </Text>
           </View>
           <View>
             <DiceDimentions
               onDiceDimentionPress={onDiceDimentionPress}
+              gamePlayingState={gamePlayingState}
               diceDimentions={diceDimentions}
             />
           </View>
