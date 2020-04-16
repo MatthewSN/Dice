@@ -145,7 +145,12 @@ const Game = ({ navigation }) => {
       </View>
       <ScrollView>
         <View style={section1}>
-          <DiceLoader maxRoll={5} roll={roll} onRollingEnd={onRollingEnd} />
+          <DiceLoader
+            gamePlayingStates={gamePlayingState}
+            maxRoll={5}
+            roll={roll}
+            onRollingEnd={onRollingEnd}
+          />
           <View style={btnCnt}>
             <Button
               titleStyle={buttonTitleStyle}

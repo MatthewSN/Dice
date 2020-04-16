@@ -2,13 +2,26 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import diceList from "../utils/dataLists/diceList";
 import { useSelector } from "react-redux";
+import GamePlayingStates from "../utils/gamePlayingStates";
+import Colors from "../utils/colors";
 
-export default ({ maxRoll = 5, onRollingEnd = () => {}, roll = false }) => {
-  const { diceCnt } = styles;
+export default ({
+  maxRoll = 5,
+  onRollingEnd = () => {},
+  roll = false,
+  gamePlayingStates = GamePlayingStates.PLAYING,
+}) => {
+  const {
+    diceCnt,
+    defaultDiceColorStyle,
+    wrongGuessStyle,
+    rightGuessStyle,
+  } = styles;
 
   const [currentDiceDimention, setCurrentDiceDimention] = useState(
     diceList[0].image
   );
+  const [diceColorStyle, setDiceColorStyle] = useState(defaultDiceColorStyle);
 
   var intervalDice;
   useEffect(() => {
@@ -17,7 +30,14 @@ export default ({ maxRoll = 5, onRollingEnd = () => {}, roll = false }) => {
     } else {
       clearInterval();
     }
-  }, [roll]);
+    if (gamePlayingStates === GamePlayingStates.PLAYING) {
+      setDiceColorStyle(defaultDiceColorStyle);
+    } else if (gamePlayingStates === GamePlayingStates.WON) {
+      setDiceColorStyle(rightGuessStyle);
+    } else if (gamePlayingStates === GamePlayingStates.LOST) {
+      setDiceColorStyle(wrongGuessStyle);
+    }
+  }, [roll, gamePlayingStates]);
 
   const setIterval = () => {
     let counter = 1;
@@ -35,7 +55,7 @@ export default ({ maxRoll = 5, onRollingEnd = () => {}, roll = false }) => {
     clearInterval(intervalDice);
   };
   return (
-    <View style={diceCnt}>
+    <View style={diceColorStyle}>
       <Image
         style={{ width: 100, height: 100 }}
         source={currentDiceDimention}
@@ -45,8 +65,14 @@ export default ({ maxRoll = 5, onRollingEnd = () => {}, roll = false }) => {
 };
 
 const styles = StyleSheet.create({
-  diceCnt: {
+  defaultDiceColorStyle: {
     backgroundColor: "gray",
     margin: 50,
+  },
+  wrongGuessStyle: {
+    backgroundColor: Colors.COLOR_RED_1,
+  },
+  rightGuessStyle: {
+    backgroundColor: Colors.COLOR_GREEN_1,
   },
 });
