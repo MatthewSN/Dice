@@ -21,6 +21,7 @@ export default ({
     rightGuessStyle,
     wrongGuessStyle,
     disableStyle,
+    flatListContainerStyle,
   } = styles;
 
   const getDiceStyle = (isSlected) => {
@@ -36,25 +37,27 @@ export default ({
   };
 
   return (
-    <FlatList
-      data={diceDimentions}
-      horizontal={true}
-      renderItem={({ item }) => {
-        return (
-          <TouchableHighlight
-            underlayColor="red"
-            activeOpacity={0.9}
-            style={container}
-            onPress={onDiceDimentionPress.bind(this, item.id)}
-          >
-            <View style={getDiceStyle(item.isSlected)}>
-              <Image style={{ width: 80, height: 80 }} source={item.image} />
-            </View>
-          </TouchableHighlight>
-        );
-      }}
-      keyExtractor={(item) => item.id}
-    />
+    <View style={flatListContainerStyle}>
+      <FlatList
+        data={diceDimentions}
+        numColumns={3}
+        renderItem={({ item }) => {
+          return (
+            <TouchableHighlight
+              underlayColor="red"
+              activeOpacity={0.9}
+              style={container}
+              onPress={onDiceDimentionPress.bind(this, item.id)}
+            >
+              <View style={getDiceStyle(item.isSlected)}>
+                <Image style={{ width: 80, height: 80 }} source={item.image} />
+              </View>
+            </TouchableHighlight>
+          );
+        }}
+        keyExtractor={(item) => item.id}
+      />
+    </View>
   );
 };
 
@@ -76,5 +79,8 @@ const styles = StyleSheet.create({
   },
   container: {
     margin: 10,
+  },
+  flatListContainerStyle: {
+    alignItems: "center",
   },
 });

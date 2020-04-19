@@ -141,42 +141,41 @@ const Game = ({ navigation }) => {
         title={Strings.NUMBER_OF_CORRECT_GUESSES}
         score={currentPoint}
       />
-      <ScrollView>
-        <View style={section1}>
-          <DiceLoader
-            gamePlayingStates={gamePlayingState}
-            maxRoll={5}
-            roll={roll}
-            onRollingEnd={onRollingEnd}
-          />
-          <View style={btnCnt}>
-            <Button
-              titleStyle={buttonTitleStyle}
-              disabled={selectedItemsCount < 3}
-              onPress={onRollTheDicePress}
-              title={Strings.ROLL_THE_DICE}
-            />
-          </View>
-        </View>
 
-        <View
-          pointerEvents={
-            gamePlayingState !== GamePlayingStates.PLAYING ? "none" : "auto"
-          }
-          style={section2}
-        >
-          <View style={textCnt}>
-            <Text style={txt}>{Strings.CHOOSE_THREE_DIMENTIONS} </Text>
-          </View>
-          <View>
-            <DiceDimentions
-              onDiceDimentionPress={onDiceDimentionPress}
-              gamePlayingState={gamePlayingState}
-              diceDimentions={diceDimentions}
-            />
-          </View>
+      <View style={section1}>
+        <DiceLoader
+          gamePlayingStates={gamePlayingState}
+          maxRoll={5}
+          roll={roll}
+          onRollingEnd={onRollingEnd}
+        />
+        <View style={btnCnt}>
+          <Button
+            titleStyle={buttonTitleStyle}
+            disabled={selectedItemsCount < 3}
+            onPress={onRollTheDicePress}
+            title={Strings.ROLL_THE_DICE}
+          />
         </View>
-      </ScrollView>
+      </View>
+
+      <View
+        pointerEvents={
+          gamePlayingState !== GamePlayingStates.PLAYING ? "none" : "auto"
+        }
+        style={section2}
+      >
+        <View style={textCnt}>
+          <Text style={txt}>{Strings.CHOOSE_THREE_DIMENTIONS} </Text>
+        </View>
+        <View>
+          <DiceDimentions
+            onDiceDimentionPress={onDiceDimentionPress}
+            gamePlayingState={gamePlayingState}
+            diceDimentions={diceDimentions}
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -216,6 +215,7 @@ const styles = StyleSheet.create({
 
   mainCnt: {
     backgroundColor: Colors.COLOR_RED_2,
+    alignItems: "center",
   },
   buttonTitleStyle: {
     fontWeight: "700",
