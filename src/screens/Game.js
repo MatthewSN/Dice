@@ -16,6 +16,8 @@ import { logPoint, finishGame } from "../redux/actions/api";
 import DiceLoader from "../components/DiceLoader";
 import Strings from "../utils/strings";
 import GamePlayingStates from "../utils/gamePlayingStates";
+import Colors from "../utils/colors";
+import ScoreHeader from "../components/ScoreHeader";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
@@ -135,14 +137,10 @@ const Game = ({ navigation }) => {
   };
   return (
     <View style={mainCnt}>
-      <View style={scoreSection}>
-        <View style={scoreCnt}>
-          <Text style={scoreText}>
-            {Strings.NUMBER_OF_CORRECT_GUESSES}
-            {currentPoint}
-          </Text>
-        </View>
-      </View>
+      <ScoreHeader
+        title={Strings.NUMBER_OF_CORRECT_GUESSES}
+        score={currentPoint}
+      />
       <ScrollView>
         <View style={section1}>
           <DiceLoader
@@ -183,22 +181,7 @@ const Game = ({ navigation }) => {
   );
 };
 
-Game.navigationOptions = {
-  header: () => null,
-};
-
 const styles = StyleSheet.create({
-  scoreSection: {
-    width: "100%",
-    height: 50,
-    backgroundColor: "#ccd1e3",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 1,
-    elevation: 5,
-    justifyContent: "center",
-  },
   section1: {
     width: "100%",
     height: DEVICE_HEIGHT / 2,
@@ -232,14 +215,7 @@ const styles = StyleSheet.create({
   },
 
   mainCnt: {
-    backgroundColor: "#a7334c",
-  },
-  scoreText: {
-    fontWeight: "700",
-    fontSize: 20,
-  },
-  scoreCnt: {
-    margin: 20,
+    backgroundColor: Colors.COLOR_RED_2,
   },
   buttonTitleStyle: {
     fontWeight: "700",

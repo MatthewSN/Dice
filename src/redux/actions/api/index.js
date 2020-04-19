@@ -108,11 +108,7 @@ export const finishGame = () => {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
-      /*    Toast.makeText(
-        GameActivity.this,
-        "Error in register points",
-        Toast.LENGTH_LONG
-      ).show(); */
+      // ToastAndroid.show(Strings.SIGN_UP_ERROR, ToastAndroid.SHORT);
     }
   };
 };
@@ -165,6 +161,7 @@ export const getPointInfo = () => {
         Urls.BASE_URL + Urls.GET_POINTS_INFO,
         HttpRequests.getRequest(token)
       );
+
       const json = await response.json();
 
       if (json.state === ApiResponseState.SUCCESS) {
@@ -190,8 +187,7 @@ export const getPointInfo = () => {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
-      ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
-      console.log("EEEEEEEEEEEEEEEEEEE");
+      ToastAndroid.show(Strings.SIGN_UP_ERROR, ToastAndroid.SHORT);
     }
   };
 };

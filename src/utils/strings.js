@@ -23,4 +23,6 @@ export default {
   YES: "بله",
   FINISHE_THE_GAME: "اتمام بازی",
   YOUR_POINTS: "امتیازات",
+  TOTAL_POINT: "امتیاز کل: ",
+  REFRESH: "رفرش امتیازات",
 };

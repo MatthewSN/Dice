@@ -27,24 +27,24 @@ const Navigation = () => {
   if (token) {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name="Home"
-            component={Screens.Home}
-          />
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name="Game"
-            component={Screens.Game}
-          />
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={Screens.Home} />
+          <Stack.Screen name="Game" component={Screens.Game} />
         </Stack.Navigator>
       </NavigationContainer>
     );
   } else {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
           <Stack.Screen name="Login" component={Screens.Login} />
           <Stack.Screen name="SignUp" component={Screens.SignUp} />
           <Stack.Screen name="Verification" component={Screens.Verification} />

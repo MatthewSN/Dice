@@ -6,6 +6,7 @@ import validator from "validator";
 import { connect } from "react-redux";
 import { setCodeSent } from "../redux/actions";
 import { verifyPhoneNumber } from "../redux/actions/api";
+import Colors from "../utils/colors";
 
 class Verification extends React.Component {
   constructor(props) {
@@ -50,76 +51,34 @@ class Verification extends React.Component {
   }
   render() {
     const { message, code } = this.state;
-
+    const { containerStyle, cardContainerStyle } = styles;
     return (
-      <Card>
-        <View style={styles.margin}>
-          <Input
-            keyboardType="numeric"
-            value={code}
-            onChangeText={this.onCodeChange}
-            placeholder={Strings.CODE}
-            maxLength={5}
-          />
-        </View>
-        {message && (
-          <View style={styles.messageCnt}>
-            <Text style={styles.messageStyle}>{message}</Text>
+      <View style={containerStyle}>
+        <Card containerStyle={cardContainerStyle}>
+          <View style={styles.margin}>
+            <Input
+              keyboardType="numeric"
+              value={code}
+              onChangeText={this.onCodeChange}
+              placeholder={Strings.CODE}
+              maxLength={5}
+            />
           </View>
-        )}
-        <Button
-          onPress={this.onVerifyPress}
-          style={styles.margin}
-          title={Strings.VERIFICATION}
-        />
-      </Card>
+          {message && (
+            <View style={styles.messageCnt}>
+              <Text style={styles.messageStyle}>{message}</Text>
+            </View>
+          )}
+          <Button
+            onPress={this.onVerifyPress}
+            style={styles.margin}
+            title={Strings.VERIFICATION}
+          />
+        </Card>
+      </View>
     );
   }
 }
-
-/* const Verification = () => {
-  const [code, setCode] = useState("");
-  const [message, setMassage] = useState(null);
-  const { margin, messageCnt, messageStyle } = styles;
-
-  const onCodeChange = text => {
-    if (validator.isInt(text) || text === "") {
-      setCode(text);
-    }
-  };
-  const onVerifyPress = () => {
-    if (code === "") {
-      setMassage(Strings.EMPTY_FIELD_ERROR);
-    }
-  };
-  return (
-    <Card>
-      <View style={margin}>
-        <Input
-          keyboardType="numeric"
-          value={code}
-          onChangeText={onCodeChange}
-          placeholder={Strings.CODE}
-          maxLength={5}
-        />
-      </View>
-      {message && (
-        <View style={messageCnt}>
-          <Text style={messageStyle}>{message}</Text>
-        </View>
-      )}
-      <Button
-        onPress={onVerifyPress}
-        style={margin}
-        title={Strings.VERIFICATION}
-      />
-    </Card>
-  );
-}; */
-
-Verification.navigationOptions = {
-  headerTitle: Strings.VERIFICATION,
-};
 
 const styles = StyleSheet.create({
   margin: {
@@ -132,6 +91,15 @@ const styles = StyleSheet.create({
   },
   messageStyle: {
     fontWeight: "700",
+  },
+  containerStyle: {
+    backgroundColor: Colors.COLOR_RED_2,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+  },
+  cardContainerStyle: {
+    backgroundColor: Colors.COLOR_GRAY_1,
   },
 });
 
