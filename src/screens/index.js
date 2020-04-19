@@ -3,11 +3,13 @@ import Home from "./Home";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Verification from "./Verification";
+import Scores from "./Scores";
 
 export default {
   Game,
   Home,
   Login,
   SignUp,
-  Verification
+  Verification,
+  Scores,
 };

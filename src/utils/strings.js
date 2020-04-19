@@ -25,4 +25,6 @@ export default {
   YOUR_POINTS: "امتیازات",
   TOTAL_POINT: "امتیاز کل: ",
   REFRESH: "رفرش امتیازات",
+  SCORES: "امتیازات",
+  INCREASE_POINT: "افزایش امتیاز با تماشای تبلیغ",
 };
