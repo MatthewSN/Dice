@@ -31,10 +31,9 @@ const Game = ({ navigation }) => {
     btnCnt,
     buttonTitleStyle,
   } = styles;
-  const [selectedItemsCount, setSelectedItemsCount] = useState(0);
-  const [diceDimentions, setDiceDimentions] = useState(diceList);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [roll, setRoll] = useState(false);
+  const [selectedDimensionsCount, setSelectedItemsCount] = useState(0);
+  const [diceDimensions, setDiceDimensions] = useState(diceList);
+  const [selectedDimensions, setSelectedDimensions] = useState([]);
   const [currentPoint, setCurrentPoint] = useState(0);
   const [gamePlayingState, setGamePlayingState] = useState(
     GamePlayingStates.PLAYING
@@ -42,67 +41,102 @@ const Game = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
-  const resetSelectedDices = () => {
+  //Reseting the game related states when user decides to continue
+  const resetForNewThrow = () => {
     setSelectedItemsCount(0);
-    setSelectedItems([]);
-    const updatedDiceDimentions = [...diceDimentions];
+    setSelectedDimensions([]);
+    const updatedDiceDimentions = [...diceDimensions];
     updatedDiceDimentions.forEach((dice) => {
       dice.isSlected = false;
     });
     setGamePlayingState(GamePlayingStates.PLAYING);
-    setDiceDimentions(updatedDiceDimentions);
+    setDiceDimensions(updatedDiceDimentions);
   };
 
-  const onDiceDimentionPress = (id) => {
-    const itemIndex = diceDimentions.findIndex((item) => item.id === id);
-    const item = diceDimentions[itemIndex];
-    let updatedItem = { ...item };
-    let updatedSelectedItems = [...selectedItems];
-    if (selectedItemsCount < 3 && !item.isSlected) {
-      updatedItem = {
-        ...item,
-        isSlected: true,
-      };
-      setSelectedItemsCount(selectedItemsCount + 1);
-      updatedSelectedItems.push(item.id);
-    } else if (item.isSlected) {
-      updatedItem = {
-        ...item,
-        isSlected: false,
-      };
-      setSelectedItemsCount(selectedItemsCount - 1);
-      updatedSelectedItems = selectedItems.filter((id) => id != item.id);
+  //Check if we could select a dimensioin or not
+  const canSelect = (dimension = {}) => {
+    if (selectedDimensionsCount < 3 && !dimension.isSlected) return true;
+    return false;
+  };
+
+  //Select or diselect a dimension
+  const toggleDimension = (dimension, demensionIndex, isSlected) => {
+    let updatedDimension = { ...dimension };
+    let updatedSelectedItems = [...selectedDimensions];
+    updatedDimension = {
+      ...dimension,
+      isSlected: isSlected,
+    };
+    if (isSlected) {
+      setSelectedItemsCount(selectedDimensionsCount + 1);
+      updatedSelectedItems.push(dimension.id);
+    } else {
+      setSelectedItemsCount(selectedDimensionsCount - 1);
+      updatedSelectedItems = selectedDimensions.filter(
+        (id) => id != dimension.id
+      );
     }
-    setSelectedItems(updatedSelectedItems);
-    const updatedList = [...diceDimentions];
-    updatedList[itemIndex] = updatedItem;
-
-    setDiceDimentions(updatedList);
+    setSelectedDimensions(updatedSelectedItems);
+    const updatedDiceDimensions = [...diceDimensions];
+    updatedDiceDimensions[demensionIndex] = updatedDimension;
+    setDiceDimensions(updatedDiceDimensions);
   };
 
+  //When pressed on one of the dimensions this method controls whether the mentioned
+  //dimension should be selected or not
+  const onDiceDimentionPress = (id) => {
+    const demensionIndex = diceDimensions.findIndex((item) => item.id === id);
+    const pressedDimension = diceDimensions[demensionIndex];
+    if (canSelect(pressedDimension)) {
+      toggleDimension(pressedDimension, demensionIndex, true);
+    } else if (pressedDimension.isSlected) {
+      toggleDimension(pressedDimension, demensionIndex, false);
+    }
+  };
+
+  //Change the Game State to Rolling
   const onRollTheDicePress = () => {
-    setRoll(true);
     setGamePlayingState(GamePlayingStates.ROLLING);
   };
 
-  const onRollingEnd = (result = 1) => {
-    setRoll(false);
-    const resultInSelectedIndex = selectedItems.findIndex(
-      (item) => parseInt(item) === result
+  //Check wheather game is lost or not
+  const didLost = (diceDimensionResult = 0) => {
+    const resultInSelectedIndex = selectedDimensions.findIndex(
+      (item) => parseInt(item) === diceDimensionResult
     );
-    if (resultInSelectedIndex == -1) {
-      dispatch(logPoint(1));
-      setGamePlayingState(GamePlayingStates.LOST);
-      leaveToScoresScreen();
-    } else {
-      setCurrentPoint(currentPoint + 1);
-      setGamePlayingState(GamePlayingStates.WON);
-      dispatch(logPoint(0));
-      openAlertWindow();
-    }
-    console.log(resultInSelectedIndex);
-    console.log(selectedItems);
+    if (resultInSelectedIndex == -1) return true;
+    return false;
   };
+
+  //Called when guess was wrong
+  const onGameLost = () => {
+    dispatch(logPoint(1));
+    setGamePlayingState(GamePlayingStates.LOST);
+    leaveToScoresScreen();
+  };
+
+  //Called when guess was right
+  const onPointGained = () => {
+    setCurrentPoint(currentPoint + 1);
+    setGamePlayingState(GamePlayingStates.WON);
+    dispatch(logPoint(0));
+    openAlertWindow();
+  };
+
+  //Called after dice rolling has ended(Called in DiceLoader component)
+  const onRollingEnd = (diceDimensionResult = 1) => {
+    const resultInSelectedIndex = selectedDimensions.findIndex(
+      (item) => parseInt(item) === diceDimensionResult
+    );
+    const lostGame = didLost(diceDimensionResult);
+    if (lostGame) {
+      onGameLost();
+    } else {
+      onPointGained();
+    }
+  };
+
+  //Giving options for continuing or finishing the game(Called after some points has gained)
   const openAlertWindow = () => {
     Alert.alert(
       "؟",
@@ -111,7 +145,7 @@ const Game = ({ navigation }) => {
         {
           text: Strings.YES,
           onPress: () => {
-            resetSelectedDices();
+            resetForNewThrow();
           },
           style: "cancel",
         },
@@ -134,10 +168,6 @@ const Game = ({ navigation }) => {
     dispatch(finishGame());
   };
 
-  //if there is any more than one screen left pop the screen
-  closeThisScreen = () => {
-    navigation.pop();
-  };
   return (
     <View style={mainCnt}>
       <ScoreHeader
@@ -149,13 +179,13 @@ const Game = ({ navigation }) => {
         <DiceLoader
           gamePlayingStates={gamePlayingState}
           maxRoll={5}
-          roll={roll}
+          roll={gamePlayingState === GamePlayingStates.ROLLING ? true : false}
           onRollingEnd={onRollingEnd}
         />
         <View style={btnCnt}>
           <Button
             titleStyle={buttonTitleStyle}
-            disabled={selectedItemsCount < 3}
+            disabled={selectedDimensionsCount < 3}
             onPress={onRollTheDicePress}
             title={Strings.ROLL_THE_DICE}
           />
@@ -175,7 +205,7 @@ const Game = ({ navigation }) => {
           <DiceDimentions
             onDiceDimentionPress={onDiceDimentionPress}
             gamePlayingState={gamePlayingState}
-            diceDimentions={diceDimentions}
+            diceDimentions={diceDimensions}
           />
         </View>
       </View>
