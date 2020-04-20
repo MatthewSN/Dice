@@ -123,15 +123,17 @@ export const logPoint = (status) => {
           HttpRequests.createRequestParams({ Status: status }),
         HttpRequests.postRequest(token)
       );
-      console.log(response);
+      console.log("LOG_POINT", response);
       const json = await response.json();
 
       if (json.state === ApiResponseState.SUCCESS) {
         console.log("log was successful");
       } else {
+        console.log("log failed");
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }
     } catch (e) {
+      console.log("log failed");
       console.log(e.message);
     }
   };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
 import Strings from "../utils/strings";
@@ -6,26 +6,82 @@ import RNTapsellPlus from "react-native-tapsell-plus";
 import Keys from "../utils/tapsellKeys";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsAdAvailable } from "../redux/actions";
-import { getPointInfo, logPoint } from "../redux/actions/api";
+import { getPointInfo, logPoint, finishGame } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import ScoreHeader from "../components/ScoreHeader";
 
 const Home = ({ navigation }) => {
+  const [isAdAvailable, setIsAdAvailable] = useState(false);
+  const dispatch = useDispatch();
+
   const {
     cardContainerStyle,
     containerStyle,
     buttonContainerStyle,
     cardOuterContainerStyle,
   } = styles;
+  const onSocresButtonPress = () => {
+    navigation.navigate("Scores");
+  };
+  const onIncreaseScoreButtonPress = () => {
+    showAd();
+  };
+
+  const requestForAd = () => {
+    RNTapsellPlus.requestRewarded(
+      Keys.RWARD_AD,
+      () => {
+        console.log("succesful fetch");
+        setIsAdAvailable(true);
+      },
+      () => {}
+    );
+  };
+  /*showing the ad :
+  1-Adding point if user watched till the end
+  2-navigating to the Scores scene to see the result
+  */
+  const showAd = () => {
+    RNTapsellPlus.showAd(
+      Keys.RWARD_AD,
+      () => {},
+      () => {
+        setIsAdAvailable(false);
+        dispatch(logPoint(0));
+        dispatch(finishGame());
+        navigation.navigate("Scores");
+      },
+      () => {
+        setIsAdAvailable(false);
+        dispatch(logPoint(0));
+        dispatch(finishGame());
+        navigation.navigate("Scores");
+      },
+      () => {
+        setIsAdAvailable(false);
+      }
+    );
+  };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {});
+    requestForAd();
+    return unsubscribe;
+  }, [navigation]);
+
   return (
     <View style={containerStyle}>
       <View style={cardOuterContainerStyle}>
         <Card containerStyle={cardContainerStyle}>
           <View style={buttonContainerStyle}>
-            <Button title={Strings.SCORES} />
+            <Button onPress={onSocresButtonPress} title={Strings.SCORES} />
           </View>
           <View style={buttonContainerStyle}>
-            <Button title={Strings.INCREASE_POINT} />
+            <Button
+              disabled={!isAdAvailable}
+              onPress={onIncreaseScoreButtonPress}
+              title={Strings.INCREASE_POINT}
+            />
           </View>
         </Card>
       </View>
