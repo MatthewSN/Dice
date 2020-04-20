@@ -47,9 +47,6 @@ const Home = ({ navigation }) => {
       () => {},
       () => {
         setIsAdAvailable(false);
-        dispatch(logPoint(0));
-        dispatch(finishGame());
-        navigation.navigate("Scores");
       },
       () => {
         setIsAdAvailable(false);
@@ -69,10 +66,17 @@ const Home = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
+  const onStartGamePress = () => {
+    navigation.navigate("Game");
+  };
+
   return (
     <View style={containerStyle}>
       <View style={cardOuterContainerStyle}>
         <Card containerStyle={cardContainerStyle}>
+          <View style={buttonContainerStyle}>
+            <Button onPress={onStartGamePress} title={Strings.START_THE_GAME} />
+          </View>
           <View style={buttonContainerStyle}>
             <Button onPress={onSocresButtonPress} title={Strings.SCORES} />
           </View>

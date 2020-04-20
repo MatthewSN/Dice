@@ -42,28 +42,7 @@ const Home = ({ navigation }) => {
 
   const onStartGamePress = () => {
     dispatch(setIsAdAvailable(false));
-    RNTapsellPlus.requestRewarded(
-      Keys.RWARD_AD,
-      () => {
-        RNTapsellPlus.showAd(
-          Keys.RWARD_AD,
-          () => {},
-          () => {
-            navigation.navigate("Game");
-          },
-          () => {
-            navigation.navigate("Game");
-            dispatch(logPoint(0));
-          },
-          () => {
-            navigation.navigate("Game");
-          }
-        );
-      },
-      () => {
-        navigation.navigate("Game");
-      }
-    );
+    navigation.navigate("Game");
   };
   const onRefreshPress = () => {
     dispatch(getPointInfo());

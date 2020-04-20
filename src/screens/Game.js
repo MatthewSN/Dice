@@ -29,9 +29,6 @@ const Game = ({ navigation }) => {
     textCnt,
     txt,
     btnCnt,
-    scoreSection,
-    scoreText,
-    scoreCnt,
     buttonTitleStyle,
   } = styles;
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
@@ -96,7 +93,7 @@ const Game = ({ navigation }) => {
     if (resultInSelectedIndex == -1) {
       dispatch(logPoint(1));
       setGamePlayingState(GamePlayingStates.LOST);
-      goBackToHomeScene();
+      leaveToScoresScreen();
     } else {
       setCurrentPoint(currentPoint + 1);
       setGamePlayingState(GamePlayingStates.WON);
@@ -121,18 +118,24 @@ const Game = ({ navigation }) => {
         {
           text: Strings.FINISHE_THE_GAME,
           onPress: () => {
-            endTheGame();
+            sumbitResultForGettingPoints();
+            leaveToScoresScreen();
           },
         },
       ],
       { cancelable: false }
     );
   };
-  const endTheGame = () => {
-    dispatch(finishGame());
-    goBackToHomeScene();
+  const leaveToScoresScreen = () => {
+    navigation.replace("Scores");
   };
-  const goBackToHomeScene = () => {
+  //Getting score in winnig state
+  const sumbitResultForGettingPoints = () => {
+    dispatch(finishGame());
+  };
+
+  //if there is any more than one screen left pop the screen
+  closeThisScreen = () => {
     navigation.pop();
   };
   return (
