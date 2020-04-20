@@ -1,4 +1,5 @@
 import Types from "../utils/types";
+import GamePlayingStates from "../../utils/gamePlayingStates";
 
 const initialState = {
   codeSent: false,
@@ -8,6 +9,7 @@ const initialState = {
   isAdAvailable: false,
   shouldGetScoreInfo: true,
   isAuth: false,
+  gamePlayingState: GamePlayingStates.NOT_PLAYING,
 };
 
 export default (state = initialState, action) => {
@@ -36,6 +38,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuth: action.payload,
+      };
+    case Types.SET_GAME_PLAYING_STATE:
+      return {
+        ...state,
+        gamePlayingState: action.payload,
       };
     default:
       return state;

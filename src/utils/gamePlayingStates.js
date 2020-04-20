@@ -3,4 +3,5 @@ export default {
   LOST: "lost",
   WON: "won",
   ROLLING: "rolling",
+  NOT_PLAYING: "not playing",
 };

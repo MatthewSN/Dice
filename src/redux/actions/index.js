@@ -1,4 +1,5 @@
 import Types from "../utils/types";
+import GamePlayingStates from "../../utils/gamePlayingStates";
 
 export const setPointsInfo = (pointsInof = {}) => ({
   type: Types.SET_POINTS_INFO,
@@ -43,4 +44,12 @@ export const setIsAuth = (isAuth) => ({
 export const setToken = (token = "") => ({
   type: Types.SET_TOKEN,
   payload: token,
+});
+
+//Action for changing the game state
+export const setGamePlayingState = (
+  gamePlayingState = GamePlayingStates.NOT_PLAYING
+) => ({
+  type: Types.SET_GAME_PLAYING_STATE,
+  payload: gamePlayingState,
 });

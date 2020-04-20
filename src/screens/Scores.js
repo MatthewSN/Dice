@@ -9,6 +9,7 @@ import { setIsAdAvailable } from "../redux/actions";
 import { getPointInfo, logPoint } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import ScoreHeader from "../components/ScoreHeader";
+import GamePlayingStates from "../utils/gamePlayingStates";
 
 const Home = ({ navigation }) => {
   const {
@@ -31,7 +32,7 @@ const Home = ({ navigation }) => {
   } = useSelector((state) => {
     return state.pointsInfo;
   });
-
+  const { gamePlayingState } = useSelector((state) => state.appStatus);
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       dispatch(getPointInfo());
@@ -90,7 +91,15 @@ const Home = ({ navigation }) => {
                 <Text style={numbersStyle}>{rank}</Text>
               </View>
             </View>
-            <Button onPress={onStartGamePress} title={Strings.START_THE_GAME} />
+
+            {gamePlayingState === GamePlayingStates.LOST ? (
+              <Button
+                onPress={onStartGamePress}
+                title={Strings.START_THE_GAME}
+              />
+            ) : (
+              undefined
+            )}
           </Card>
         </View>
         <View style={refreshButtonContainerStyle}>

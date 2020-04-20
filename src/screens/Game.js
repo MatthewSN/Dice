@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,7 +11,7 @@ import diceList from "../utils/dataLists/diceList";
 import DiceDimentions from "../components/DiceDimentions";
 import { Button } from "react-native-elements";
 import { useSelector, useDispatch } from "react-redux";
-import { setIsFetching } from "../redux/actions";
+import { setIsFetching, setGamePlayingState } from "../redux/actions";
 import { logPoint, finishGame } from "../redux/actions/api";
 import DiceLoader from "../components/DiceLoader";
 import Strings from "../utils/strings";
@@ -35,11 +35,16 @@ const Game = ({ navigation }) => {
   const [diceDimensions, setDiceDimensions] = useState(diceList);
   const [selectedDimensions, setSelectedDimensions] = useState([]);
   const [currentPoint, setCurrentPoint] = useState(0);
-  const [gamePlayingState, setGamePlayingState] = useState(
-    GamePlayingStates.PLAYING
-  );
-
   const dispatch = useDispatch();
+  const { gamePlayingState } = useSelector((state) => state.appStatus);
+  useEffect(() => {
+    changeGamePlayingState(GamePlayingStates.PLAYING);
+  }, []);
+
+  //Handeling setting the game state dispatch
+  const changeGamePlayingState = (newState = GamePlayingStates.PLAYING) => {
+    dispatch(setGamePlayingState(newState));
+  };
 
   //Reseting the game related states when user decides to continue
   const resetForNewThrow = () => {
@@ -49,7 +54,7 @@ const Game = ({ navigation }) => {
     updatedDiceDimentions.forEach((dice) => {
       dice.isSlected = false;
     });
-    setGamePlayingState(GamePlayingStates.PLAYING);
+    changeGamePlayingState(GamePlayingStates.PLAYING);
     setDiceDimensions(updatedDiceDimentions);
   };
 
@@ -96,7 +101,7 @@ const Game = ({ navigation }) => {
 
   //Change the Game State to Rolling
   const onRollTheDicePress = () => {
-    setGamePlayingState(GamePlayingStates.ROLLING);
+    changeGamePlayingState(GamePlayingStates.ROLLING);
   };
 
   //Check wheather game is lost or not
@@ -111,14 +116,14 @@ const Game = ({ navigation }) => {
   //Called when guess was wrong
   const onGameLost = () => {
     dispatch(logPoint(1));
-    setGamePlayingState(GamePlayingStates.LOST);
+    changeGamePlayingState(GamePlayingStates.LOST);
     leaveToScoresScreen();
   };
 
   //Called when guess was right
   const onPointGained = () => {
     setCurrentPoint(currentPoint + 1);
-    setGamePlayingState(GamePlayingStates.WON);
+    changeGamePlayingState(GamePlayingStates.WON);
     dispatch(logPoint(0));
     openAlertWindow();
   };
