@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Input, Card, Button } from "react-native-elements";
+import { View, StyleSheet } from "react-native";
 import Strings from "../utils/strings";
 import validator from "validator";
 import { connect } from "react-redux";
@@ -14,30 +13,29 @@ class Verification extends React.Component {
     super(props);
     this.onCodeChange = this.onCodeChange.bind(this);
     this.onVerifyPress = this.onVerifyPress.bind(this);
+    this.setCodeSentState = this.setCodeSentState.bind(this);
     this.state = {
       message: null,
       code: "",
     };
   }
+
+  //Reset codeSent back to false when the screen going to unmount
   componentWillUnmount() {
-    this.props.dispatch(setCodeSent(false));
+    this.setCodeSentState(false);
   }
-  componentDidMount() {
-    this.redirectToHomeScene();
-  }
-  componentDidUpdate() {
-    this.redirectToHomeScene();
-  }
-  redirectToHomeScene() {
-    if (this.props.token) {
-      this.props.navigation.navigate("Home");
-    }
-  }
+  //Setting codeSent state
+  setCodeSentState = (didSend) => {
+    this.props.dispatch(setCodeSent(didSend));
+  };
+
+  //Called each time user enters something in the textField
   onCodeChange(text) {
     if (validator.isInt(text) || text === "") {
       this.setState((state) => ({ ...state, code: text }));
     }
   }
+
   onVerifyPress() {
     if (this.state.code === "") {
       this.setState((state) => ({
@@ -93,8 +91,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => ({
-  token: state.user.token,
-});
-
-export default connect(mapStateToProps)(Verification);
+export default connect()(Verification);
