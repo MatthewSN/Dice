@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { setCodeSent } from "../redux/actions";
 import { verifyPhoneNumber } from "../redux/actions/api";
 import Colors from "../utils/colors";
+import RegisterCard from "../components/RegisterCard";
 
 class Verification extends React.Component {
   constructor(props) {
@@ -54,27 +55,16 @@ class Verification extends React.Component {
     const { containerStyle, cardContainerStyle } = styles;
     return (
       <View style={containerStyle}>
-        <Card containerStyle={cardContainerStyle}>
-          <View style={styles.margin}>
-            <Input
-              keyboardType="numeric"
-              value={code}
-              onChangeText={this.onCodeChange}
-              placeholder={Strings.CODE}
-              maxLength={5}
-            />
-          </View>
-          {message && (
-            <View style={styles.messageCnt}>
-              <Text style={styles.messageStyle}>{message}</Text>
-            </View>
-          )}
-          <Button
-            onPress={this.onVerifyPress}
-            style={styles.margin}
-            title={Strings.VERIFICATION}
-          />
-        </Card>
+        <RegisterCard
+          keyboardType="numeric"
+          value={code}
+          onChangeText={this.onCodeChange}
+          placeholder={Strings.CODE}
+          maxLength={5}
+          errorMessage={message}
+          onButtonPress={this.onVerifyPress}
+          buttonTitle={Strings.VERIFICATION}
+        />
       </View>
     );
   }

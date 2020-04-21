@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Card, Button, Input } from "react-native-elements";
 import Strings from "../utils/strings";
 import validator from "validator";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +8,7 @@ import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 
 const Login = ({ navigation }) => {
-  const { txtCnt, containerStyle } = styles;
+  const { containerStyle } = styles;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState(null);
   const { codeSent } = useSelector((state) => state.appStatus);
@@ -23,6 +22,7 @@ const Login = ({ navigation }) => {
     }
   }, [codeSent]);
 
+  //Called after clicking the button
   const onSignInOrSignUpPress = () => {
     if (!phoneNumber) {
       setMessage(Strings.EMPTY_FIELD_ERROR);
@@ -52,7 +52,7 @@ const Login = ({ navigation }) => {
         errorMessage={message}
         onButtonPress={onSignInOrSignUpPress}
         buttonTitle={Strings.LOGIN}
-        CardTitle={Strings.LOGIN_EN}
+        cardTitle={Strings.LOGIN_EN}
       />
     </View>
   );
