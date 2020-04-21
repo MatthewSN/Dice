@@ -12,7 +12,7 @@ const Navigation = () => {
   const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  /*   useEffect(() => {
     getToken();
   }, []);
 
@@ -23,7 +23,7 @@ const Navigation = () => {
     } catch (e) {
       console.log("Failed to get the data from storage!");
     }
-  };
+  }; */
   if (token) {
     return (
       <NavigationContainer>
@@ -46,7 +46,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Login" component={Screens.Login} />
+          <Stack.Screen name="SignInOrUp" component={Screens.SignInOrUp} />
           <Stack.Screen name="SignUp" component={Screens.SignUp} />
           <Stack.Screen name="Verification" component={Screens.Verification} />
         </Stack.Navigator>

@@ -27,4 +27,5 @@ export default {
   REFRESH: "رفرش امتیازات",
   SCORES: "امتیازات",
   INCREASE_POINT: "افزایش امتیاز با تماشای تبلیغ",
+  LOGIN_EN: "Login",
 };
