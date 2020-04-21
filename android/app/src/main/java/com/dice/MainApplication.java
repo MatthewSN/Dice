@@ -3,6 +3,7 @@ import android.app.Application;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.imagepicker.ImagePickerPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import ir.tapsell.plus.RNTapsellPlusPackage;
 import com.facebook.react.ReactNativeHost;

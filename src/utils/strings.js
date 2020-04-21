@@ -28,4 +28,6 @@ export default {
   SCORES: "امتیازات",
   INCREASE_POINT: "افزایش امتیاز با تماشای تبلیغ",
   LOGIN_EN: "Login",
+  SIGN_UP_EN: "Sign up",
+  COMPLETE_RIGISTRATION: "تکمیل ثبت نام",
 };

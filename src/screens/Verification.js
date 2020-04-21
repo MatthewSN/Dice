@@ -8,6 +8,7 @@ import { verifyPhoneNumber } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 
+
 class Verification extends React.Component {
   constructor(props) {
     super(props);

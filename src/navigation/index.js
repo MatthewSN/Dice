@@ -46,6 +46,10 @@ const Navigation = () => {
             headerShown: false,
           }}
         >
+          <Stack.Screen
+            name="SequelRegistration"
+            component={Screens.SequelRegistration}
+          />
           <Stack.Screen name="SignInOrUp" component={Screens.SignInOrUp} />
           <Stack.Screen name="SignUp" component={Screens.SignUp} />
           <Stack.Screen name="Verification" component={Screens.Verification} />

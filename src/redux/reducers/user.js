@@ -2,7 +2,7 @@ import Types from "../utils/types";
 
 const initialState = {
   name: "",
-  image: "",
+  avatarBase64: "",
   token: "",
 };
 
@@ -17,6 +17,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         token: action.payload,
+      };
+    case Types.SET_AVATAR_BASE64:
+      return {
+        ...state,
+        avatarBase64: action.payload,
       };
     default:
       return state;

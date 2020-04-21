@@ -4,6 +4,7 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-permissions] /home/matthew/Documents/reactNative/Dice/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -202,6 +203,8 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:26:22-70
 application
 ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:29:5-50:19
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/AndroidManifest.xml:22:5-20
@@ -284,6 +287,8 @@ uses-sdk
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -472,6 +477,22 @@ INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Andr
 		INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:58
+	android:resource
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-55
+	android:name
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
 uses-permission#android.permission.STORAGE
 ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-66
 	android:name
@@ -488,12 +509,6 @@ ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_mod
 		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-48
 	android:name
 		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:70
-	android:resource
-		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-67
-	android:name
-		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
 uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from [:expo-location] /home/matthew/Documents/reactNative/Dice/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-77
 	android:name
