@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setToken } from "../redux/actions";
 import AsyncStorage from "@react-native-community/async-storage";
 const Stack = createStackNavigator();
+import Strings from "../utils/strings";
+import Colors from "../utils/colors";
 
 const Navigation = () => {
   const { token } = useSelector((state) => state.user);
@@ -49,6 +51,12 @@ const Navigation = () => {
           <Stack.Screen
             name="SequelRegistration"
             component={Screens.SequelRegistration}
+            options={{
+              headerShown: true,
+              headerTitle: Strings.COMPLETE_RIGISTRATION,
+              headerStyle: { backgroundColor: Colors.COLOR_GRAY_1 },
+              headerTitleStyle: { fontWeight: "700" },
+            }}
           />
           <Stack.Screen name="SignInOrUp" component={Screens.SignInOrUp} />
           <Stack.Screen name="SignUp" component={Screens.SignUp} />
@@ -60,36 +68,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
-/* 
-const LoginStackNavigator = createStackNavigator();
-
-const LoginStackNavigatorContainer = () => {
-  return (
-    <LoginStackNavigator.Navigator>
-      <LoginStackNavigator.Screen
-        name="Notifications"
-        component={Screens.Home}
-      />
-    </LoginStackNavigator.Navigator>
-  );
-};
- */
-/* createStackNavigator({
-  Login: Screens.Login,
-  SignUp: Screens.SignUp,
-}); */
-
-/* LoginStackNavigator.navigationOptions = {
-  headerShown: false,
-};
-
-const StackNavigator = createStackNavigator({
-  LoginStackNavigator: {
-    screen: LoginStackNavigatorContainer,
-  },
-  Home: Screens.Home,
-  Game: Screens.Game,
-  Verification: Screens.Verification,
-});
- */

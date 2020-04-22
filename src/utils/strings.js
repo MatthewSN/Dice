@@ -30,4 +30,6 @@ export default {
   LOGIN_EN: "Login",
   SIGN_UP_EN: "Sign up",
   COMPLETE_RIGISTRATION: "تکمیل ثبت نام",
+  COMPLETE: "تکمیل",
+  SAVE: "ذخیره",
 };
