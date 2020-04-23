@@ -18,10 +18,14 @@ import com.dice.R;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-image-resizer
+import fr.bamlab.rnimageresizer.ImageResizerPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -77,8 +81,10 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new RNCMaskedViewPackage(),
+      new RNFSPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new ImageResizerPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

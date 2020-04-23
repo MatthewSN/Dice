@@ -8,4 +8,6 @@ export default {
   GET_USER: "/api/user/GetUser",
   GET_POINTS_INFO: "/api/user/GetPointsInfo",
   GET_POINT: "/api/user/signin/GetPoint",
+  SIGN_IN_UP: "/api/user/signInUp",
+  USER_EDIT: "/api/user/UserEdit",
 };

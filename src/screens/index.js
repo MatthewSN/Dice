@@ -5,7 +5,7 @@ import SignUp from "./SignUp";
 import Verification from "./Verification";
 import Scores from "./Scores";
 import SignInOrUp from "./SignInOrUp";
-import SequelRegistration from "./SequelRegistration";
+import CompleteRegistration from "./CompleteRegistration";
 
 export default {
   Game,
@@ -15,5 +15,5 @@ export default {
   Verification,
   Scores,
   SignInOrUp,
-  SequelRegistration,
+  CompleteRegistration,
 };

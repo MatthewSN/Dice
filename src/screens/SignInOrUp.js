@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Strings from "../utils/strings";
 import validator from "validator";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../redux/actions/api";
+import { login, signInUp } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 
@@ -29,7 +29,7 @@ const Login = ({ navigation }) => {
     } else if (phoneNumber.length < 11 || phoneNumber.substring(0, 2) != "09") {
       setMessage(Strings.INVALID_PHONE_NUMEBERـERROR);
     } else {
-      dispatch(login(phoneNumber.substring(1)));
+      dispatch(signInUp(phoneNumber.substring(1)));
     }
   };
 

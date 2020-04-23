@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Strings from "../utils/strings";
-import validator from "validator";
 import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../redux/actions/api";
+import { userEdit } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 import ImagePicker from "react-native-image-picker";
 import { Avatar } from "react-native-elements";
+import ImageResizer from "react-native-image-resizer";
+import RNFS from "react-native-fs";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
-const SignUp = ({ navigation }) => {
+const SignUp = () => {
   const {
     containerStyle,
     childContainerStyle,
@@ -19,31 +20,56 @@ const SignUp = ({ navigation }) => {
     flex_2,
     avatarMargin,
   } = styles;
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState(null);
   const [name, setName] = useState("");
   const [avatarBase64, setAvatarBase64] = useState("");
   const dispatch = useDispatch();
-  const { codeSent } = useSelector((state) => state.appStatus);
 
+  //Called when text input change
   const nameChangeHandler = (text) => {
     setName(text);
   };
+
+  //Called when pressing button for subminting image and name
   const onCompleteButtonPress = () => {
     if (!name) {
       setMessage(Strings.EMPTY_FIELDS_ERROR);
     } else {
-      
+      dispatch(userEdit(avatarBase64, name));
     }
   };
-  const uploadPhotofrom = () => {};
-  const setAvatarComponentImage = (base64) => {
-    setAvatarBase64(base64);
+
+  //Uses react-native-fs to access photo in phone storage and then convert it to base64
+  const getImageBase64 = async (resizedImageUrl) => {
+    try {
+      const base64 = await RNFS.readFile(resizedImageUrl, "base64");
+
+      setAvatarBase64(base64);
+    } catch (e) {}
+  };
+  //Sets height and width and resolution of  an image to a low value
+  const tryReduceImageproperties = async (imageUri) => {
+    try {
+      const response = await ImageResizer.createResizedImage(
+        imageUri,
+        400,
+        400,
+        "PNG",
+        50,
+        0,
+        RNFS.DocumentDirectoryPath
+      );
+
+      getImageBase64(response.path);
+    } catch (e) {
+      console.log(e.message);
+    }
   };
 
-  const openGallery = () => {
+  const tryOpenGallery = () => {
     ImagePicker.launchImageLibrary({}, (response) => {
-      setAvatarComponentImage(response.data);
+      tryReduceImageproperties(response.path);
+      setAvatarBase64(response.data);
     });
   };
 
@@ -57,8 +83,8 @@ const SignUp = ({ navigation }) => {
             showEditButton
             rounded
             size="xlarge"
-            onEditPress={openGallery}
-            avatarStyle={{ backgroundColor: Colors.COLOR_GRAY_1 }}
+            onEditPress={tryOpenGallery}
+            /*  avatarStyle={{ backgroundColor: Colors.COLOR_GRAY_1 }} */
           />
         </View>
       </View>

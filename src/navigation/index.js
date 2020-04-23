@@ -50,7 +50,7 @@ const Navigation = () => {
         >
           <Stack.Screen
             name="SequelRegistration"
-            component={Screens.SequelRegistration}
+            component={Screens.CompleteRegistration}
             options={{
               headerShown: true,
               headerTitle: Strings.COMPLETE_RIGISTRATION,

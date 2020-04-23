@@ -4,7 +4,6 @@ import GamePlayingStates from "../../utils/gamePlayingStates";
 const initialState = {
   codeSent: false,
   gameFinished: false,
-  points: 0,
   isFetching: false,
   isAdAvailable: false,
   shouldGetScoreInfo: true,

@@ -6,6 +6,9 @@ import PointLogStatus from "../../utils/pointLogStatus";
 import { ToastAndroid } from "react-native";
 import Strings from "../../../utils/strings";
 import AsyncStorage from "@react-native-community/async-storage";
+import { NavigationActions } from "react-navigation";
+
+//Edit
 
 export const login = (phoneNumber) => {
   return async (dispatch, getState) => {
@@ -213,6 +216,62 @@ export const getPoint = () => {
       }
     } catch (e) {
       ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
+    }
+  };
+};
+
+export const signInUp = (phoneNumber) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.SIGN_IN_UP +
+          HttpRequests.createRequestParams({
+            PhoneNumber: phoneNumber,
+          }),
+        HttpRequests.postRequest()
+      );
+
+      const json = await response.json();
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        dispatch(Actions.setCodeSent(true));
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
+      }
+    } catch (e) {
+      ToastAndroid.show(Strings.SIGN_UP_ERROR, ToastAndroid.SHORT);
+    }
+  };
+};
+
+export const userEdit = (image, name) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.USER_EDIT +
+          HttpRequests.createRequestParams({
+            Image: image,
+            Name: name,
+          }),
+        HttpRequests.postRequest(
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjkwNTM2MTc4NzQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTWF0aW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjVlOGQ4NTI3NTgxYTBkMTFkNGFlNjUxZiIsImV4cCI6MTkwMjIxNzcyOSwiaXNzIjoiaHR0cDovL3NoZXBlbC5pciIsImF1ZCI6Imh0dHA6Ly9zaGVwZWwuaXIifQ.WWU94ECd2CkmamNivKu_AlwliYPCdlg03FIyXbXP9cI"
+        )
+      );
+
+      console.log("RESPONSE", response);
+
+      const json = await response.json();
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        dispatch(Actions.setCodeSent(true));
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
+      }
+    } catch (e) {
+      ToastAndroid.show(Strings.SIGN_UP_ERROR, ToastAndroid.SHORT);
+      console.log(e.message);
     }
   };
 };
