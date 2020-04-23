@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
+import { Button } from "react-native-elements";
 import Strings from "../utils/strings";
 import { useDispatch, useSelector } from "react-redux";
 import { userEdit } from "../redux/actions/api";
@@ -12,7 +13,7 @@ import RNFS from "react-native-fs";
 
 const DEVICE_HEIGHT = Dimensions.get("window").height;
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
   const {
     containerStyle,
     childContainerStyle,
@@ -24,7 +25,23 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [avatarBase64, setAvatarBase64] = useState("");
   const dispatch = useDispatch();
+  /*   const { name: globalNameState } = useSelector((state) => state.user);
 
+  useEffect(() => {
+    checkIfUserIsNew();
+  }, [globalNameState]);
+
+  //With the state, name from the redux store, determines if whether screen should be replaced with home screen or not(Called by useEffect hook)
+  const checkIfUserIsNew = () => {
+    if (globalNameState) {
+      replaceCurrentScreenWithHome();
+    }
+  };
+
+  const replaceCurrentScreenWithHome = () => {
+    navigation.replace("Home");
+  };
+ */
   //Called when text input change
   const nameChangeHandler = (text) => {
     setName(text);
@@ -84,7 +101,6 @@ const SignUp = () => {
             rounded
             size="xlarge"
             onEditPress={tryOpenGallery}
-            /*  avatarStyle={{ backgroundColor: Colors.COLOR_GRAY_1 }} */
           />
         </View>
       </View>
@@ -102,7 +118,7 @@ const SignUp = () => {
           errorMessage={message}
           onButtonPress={onCompleteButtonPress}
           buttonTitle={Strings.COMPLETE}
-        />
+        ></RegisterCard>
       </View>
     );
   };

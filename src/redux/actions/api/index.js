@@ -78,6 +78,7 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
         const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
         const { Token: token, Name: name, Image: image } = responseObj;
         AsyncStorage.setItem("token", token);
+        AsyncStorage.setItem("name", name);
         dispatch(
           Actions.setUserInfo({
             token,

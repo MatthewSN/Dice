@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ToastAndroid } from "react-native";
 import { Card, Button } from "react-native-elements";
 import Strings from "../utils/strings";
 import RNTapsellPlus from "react-native-tapsell-plus";
@@ -20,18 +20,35 @@ const Home = ({ navigation }) => {
     buttonContainerStyle,
     cardOuterContainerStyle,
   } = styles;
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {
+      requestForAd();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
+  const onStartGamePress = () => {
+    navigation.navigate("Game");
+  };
+
   const onSocresButtonPress = () => {
     navigation.navigate("Scores");
   };
   const onIncreaseScoreButtonPress = () => {
-    showAd();
+    if (isAdAvailable) {
+      showAd();
+      setIsAdAvailable(false);
+    } else {
+      ToastAndroid.show(Strings.AD_IS_NOT_AVAILABLE, ToastAndroid.SHORT);
+    }
   };
 
   const requestForAd = () => {
     RNTapsellPlus.requestRewarded(
       Keys.RWARD_AD,
       () => {
-        console.log("succesful fetch");
         setIsAdAvailable(true);
       },
       () => {}
@@ -45,29 +62,14 @@ const Home = ({ navigation }) => {
     RNTapsellPlus.showAd(
       Keys.RWARD_AD,
       () => {},
+      () => {},
       () => {
-        setIsAdAvailable(false);
-      },
-      () => {
-        setIsAdAvailable(false);
         dispatch(logPoint(0));
         dispatch(finishGame());
         navigation.navigate("Scores");
       },
-      () => {
-        setIsAdAvailable(false);
-      }
+      () => {}
     );
-  };
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {});
-    requestForAd();
-    return unsubscribe;
-  }, [navigation]);
-
-  const onStartGamePress = () => {
-    navigation.navigate("Game");
   };
 
   return (
@@ -82,7 +84,6 @@ const Home = ({ navigation }) => {
           </View>
           <View style={buttonContainerStyle}>
             <Button
-              disabled={!isAdAvailable}
               onPress={onIncreaseScoreButtonPress}
               title={Strings.INCREASE_POINT}
             />

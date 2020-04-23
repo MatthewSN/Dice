@@ -1,7 +1,6 @@
 import Screens from "../screens";
 import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-//import { createStackNavigator } from "react-navigation-stack";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector, useDispatch } from "react-redux";
 import { setToken } from "../redux/actions";
@@ -11,10 +10,10 @@ import Strings from "../utils/strings";
 import Colors from "../utils/colors";
 
 const Navigation = () => {
-  const { token } = useSelector((state) => state.user);
+  const { token, name } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  /*   useEffect(() => {
+  useEffect(() => {
     getToken();
   }, []);
 
@@ -23,10 +22,11 @@ const Navigation = () => {
       const token = await AsyncStorage.getItem("token");
       dispatch(setToken(token));
     } catch (e) {
+      console.log(e.message);
       console.log("Failed to get the data from storage!");
     }
-  }; */
-  if (token) {
+  };
+  if (/* token && name */ true) {
     return (
       <NavigationContainer>
         <Stack.Navigator
@@ -40,7 +40,7 @@ const Navigation = () => {
         </Stack.Navigator>
       </NavigationContainer>
     );
-  } else {
+  } else if (token && !name) {
     return (
       <NavigationContainer>
         <Stack.Navigator
@@ -49,7 +49,7 @@ const Navigation = () => {
           }}
         >
           <Stack.Screen
-            name="SequelRegistration"
+            name="CompleteRegistration"
             component={Screens.CompleteRegistration}
             options={{
               headerShown: true,
@@ -58,8 +58,18 @@ const Navigation = () => {
               headerTitleStyle: { fontWeight: "700" },
             }}
           />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  } else {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
           <Stack.Screen name="SignInOrUp" component={Screens.SignInOrUp} />
-          <Stack.Screen name="SignUp" component={Screens.SignUp} />
           <Stack.Screen name="Verification" component={Screens.Verification} />
         </Stack.Navigator>
       </NavigationContainer>

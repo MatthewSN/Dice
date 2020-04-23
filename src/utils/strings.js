@@ -32,4 +32,5 @@ export default {
   COMPLETE_RIGISTRATION: "تکمیل ثبت نام",
   COMPLETE: "تکمیل",
   SAVE: "ذخیره",
+  AD_IS_NOT_AVAILABLE: "در حال حاضر تبلیغی در دسترس نیست",
 };

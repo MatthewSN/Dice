@@ -17,16 +17,18 @@ export default (props) => {
   const CustomizedCard = () => {
     return (
       <Card title={cardTitle} containerStyle={cardContainerStyle}>
-        <View style={styles.margin}>
-          <Input {...props} />
-        </View>
+        <React.Fragment>
+          <View style={styles.margin}>
+            <Input {...props} />
+          </View>
 
-        <Button
-          onPress={onButtonPress}
-          style={styles.margin}
-          title={buttonTitle}
-        />
-        {children}
+          <Button
+            onPress={onButtonPress}
+            style={styles.margin}
+            title={buttonTitle}
+          />
+          {children}
+        </React.Fragment>
       </Card>
     );
   };
