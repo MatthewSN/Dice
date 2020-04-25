@@ -1,7 +1,7 @@
 import Types from "../utils/types";
 
 const initialState = {
-  name: "",
+  name: "Matin",
   avatarBase64: "",
   token: "",
 };

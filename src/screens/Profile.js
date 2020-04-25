@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions } from "react-native";
-import { Button } from "react-native-elements";
+import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { Button, Input } from "react-native-elements";
 import Strings from "../utils/strings";
 import { useDispatch, useSelector } from "react-redux";
 import { userEdit } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 import ImagePicker from "react-native-image-picker";
-import { Avatar } from "react-native-elements";
 import ImageResizer from "react-native-image-resizer";
 import RNFS from "react-native-fs";
 import UserAvatar from "../components/UserAvatar";
@@ -20,10 +19,11 @@ const SignUp = ({ navigation }) => {
     childContainerStyle,
     flex_1,
     flex_2,
-    avatarMargin,
+    buttonContainerStyle,
   } = styles;
+  const { name: userName } = useSelector((state) => state.user);
   const [message, setMessage] = useState(null);
-  const [name, setName] = useState("");
+  const [name, setName] = useState(userName);
   const [avatarBase64, setAvatarBase64] = useState("");
   const dispatch = useDispatch();
 
@@ -87,7 +87,11 @@ const SignUp = ({ navigation }) => {
   const CustomizedRegiterCard = () => {
     return (
       <View style={{ ...childContainerStyle, ...flex_2 }}>
-        <RegisterCard
+        <Text>{userName}</Text>
+        <View style={{ width: "100%" }}>
+          <Input value={name} onChangeText={nameChangeHandler} />
+        </View>
+        {/*    <RegisterCard
           placeholder={Strings.NAME}
           rightIcon={{ type: "font-awesome", name: "user" }}
           value={name}
@@ -95,7 +99,15 @@ const SignUp = ({ navigation }) => {
           errorMessage={message}
           onButtonPress={onCompleteButtonPress}
           buttonTitle={Strings.COMPLETE}
-        ></RegisterCard>
+        ></RegisterCard> */}
+      </View>
+    );
+  };
+
+  const SubmitButton = () => {
+    return (
+      <View style={buttonContainerStyle}>
+        <Button title={Strings.SAVE} />
       </View>
     );
   };
@@ -103,6 +115,7 @@ const SignUp = ({ navigation }) => {
     <View style={containerStyle}>
       {RenderAvatar()}
       {CustomizedRegiterCard()}
+      {SubmitButton()}
     </View>
   );
 };
@@ -112,19 +125,24 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.COLOR_RED_2,
     width: "100%",
     height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   childContainerStyle: {
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
   },
   flex_1: {
     height: DEVICE_HEIGHT / 3,
   },
   flex_2: {
-    height: DEVICE_HEIGHT / 3,
+    height: DEVICE_HEIGHT / 5,
   },
-  avatarMargin: {
-    margin: 20,
+  buttonContainerStyle: {
+    position: "absolute",
+    width: "100%",
+    bottom: 0,
   },
 });
 

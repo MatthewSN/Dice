@@ -23,7 +23,6 @@ const Navigation = () => {
       dispatch(setToken(token));
     } catch (e) {
       console.log(e.message);
-      console.log("Failed to get the data from storage!");
     }
   };
   if (/* token && name */ true) {
@@ -34,6 +33,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         >
+          <Stack.Screen name="Profile" component={Screens.Profile} />
           <Stack.Screen name="Home" component={Screens.Home} />
           <Stack.Screen name="Scores" component={Screens.Scores} />
           <Stack.Screen name="Game" component={Screens.Game} />

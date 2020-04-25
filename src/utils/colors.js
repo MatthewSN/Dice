@@ -5,5 +5,5 @@ export default {
   COLOR_GREEN_1: "#31ff34",
   COLOR_BLACK_1: "#303130",
   CORLOR_GRAY_2: "#abc6ab",
-  COLOR_RED_2:"#a7334c"
+  COLOR_RED_2: "#a7334c",
 };
