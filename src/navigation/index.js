@@ -33,10 +33,10 @@ const Navigation = () => {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Profile" component={Screens.Profile} />
           <Stack.Screen name="Home" component={Screens.Home} />
           <Stack.Screen name="Scores" component={Screens.Scores} />
           <Stack.Screen name="Game" component={Screens.Game} />
+          <Stack.Screen name="Profile" component={Screens.Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     );

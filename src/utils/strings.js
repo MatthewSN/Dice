@@ -33,4 +33,8 @@ export default {
   COMPLETE: "تکمیل",
   SAVE: "ذخیره",
   AD_IS_NOT_AVAILABLE: "در حال حاضر تبلیغی در دسترس نیست",
+  TRY_AGAIN: "تلاش مجدد",
+  YOU_LOST: "شما باختید",
+  SHOW_SCORES: "نمایش امتیازیات",
+  PROFILE: "پروفایل",
 };

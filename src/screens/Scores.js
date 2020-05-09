@@ -43,7 +43,7 @@ const Home = ({ navigation }) => {
 
   const onStartGamePress = () => {
     dispatch(setIsAdAvailable(false));
-    navigation.navigate("Game");
+    navigation.replace("Game");
   };
   const onRefreshPress = () => {
     dispatch(getPointInfo());
@@ -92,14 +92,7 @@ const Home = ({ navigation }) => {
               </View>
             </View>
 
-            {gamePlayingState === GamePlayingStates.LOST ? (
-              <Button
-                onPress={onStartGamePress}
-                title={Strings.START_THE_GAME}
-              />
-            ) : (
-              undefined
-            )}
+            <Button onPress={onStartGamePress} title={Strings.TRY_AGAIN} />
           </Card>
         </View>
         <View style={refreshButtonContainerStyle}>

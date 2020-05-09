@@ -57,6 +57,11 @@ const Game = ({ navigation }) => {
     changeGamePlayingState(GamePlayingStates.PLAYING);
     setDiceDimensions(updatedDiceDimentions);
   };
+  //Reseting the game states for a new game
+  const resetForNewGame = () => {
+    resetForNewThrow();
+    setCurrentPoint(0);
+  };
 
   //Check if we could select a dimensioin or not
   const canSelect = (dimension = {}) => {
@@ -104,7 +109,7 @@ const Game = ({ navigation }) => {
     changeGamePlayingState(GamePlayingStates.ROLLING);
   };
 
-  //Check wheather game is lost or not
+  //Check wheather player is lost or not
   const didLost = (diceDimensionResult = 0) => {
     const resultInSelectedIndex = selectedDimensions.findIndex(
       (item) => parseInt(item) === diceDimensionResult
@@ -117,7 +122,7 @@ const Game = ({ navigation }) => {
   const onGameLost = () => {
     dispatch(logPoint(1));
     changeGamePlayingState(GamePlayingStates.LOST);
-    leaveToScoresScreen();
+    openLostAlertWindow();
   };
 
   //Called when guess was right
@@ -165,6 +170,30 @@ const Game = ({ navigation }) => {
       { cancelable: false }
     );
   };
+
+  const openLostAlertWindow = () => {
+    Alert.alert(
+      "!!",
+      Strings.YOU_LOST,
+      [
+        {
+          text: Strings.TRY_AGAIN,
+          onPress: () => {
+            resetForNewGame();
+          },
+          style: "cancel",
+        },
+        {
+          text: Strings.SHOW_SCORES,
+          onPress: () => {
+            leaveToScoresScreen();
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   const leaveToScoresScreen = () => {
     navigation.replace("Scores");
   };

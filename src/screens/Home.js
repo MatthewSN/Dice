@@ -36,6 +36,10 @@ const Home = ({ navigation }) => {
   const onSocresButtonPress = () => {
     navigation.navigate("Scores");
   };
+  const onProfileButtonPress = () => {
+    navigation.navigate("Profile");
+  };
+
   const onIncreaseScoreButtonPress = () => {
     if (isAdAvailable) {
       showAd();
@@ -81,6 +85,9 @@ const Home = ({ navigation }) => {
           </View>
           <View style={buttonContainerStyle}>
             <Button onPress={onSocresButtonPress} title={Strings.SCORES} />
+          </View>
+          <View style={buttonContainerStyle}>
+            <Button onPress={onProfileButtonPress} title={Strings.PROFILE} />
           </View>
           <View style={buttonContainerStyle}>
             <Button
