@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dice"
+    package="ir.xinno.earn.pullapp"
     android:targetSandboxVersion="2"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -65,7 +65,7 @@
 
         <provider
             android:name="com.imagepicker.FileProvider"
-            android:authorities="com.dice.provider"
+            android:authorities="ir.xinno.earn.pullapp.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -74,7 +74,7 @@
         </provider>
         <provider
             android:name="expo.modules.filesystem.FileSystemFileProvider"
-            android:authorities="com.dice.FileSystemFileProvider"
+            android:authorities="ir.xinno.earn.pullapp.FileSystemFileProvider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
