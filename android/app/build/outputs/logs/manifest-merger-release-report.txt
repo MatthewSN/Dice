@@ -4,6 +4,10 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-14:12
+MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-image-resizer] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-resizer/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-21:12
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-permissions] /home/matthew/Documents/reactNative/Dice/node_modules/expo-permissions/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
@@ -39,7 +43,10 @@ MERGED from [:unimodules-core] /home/matthew/Documents/reactNative/Dice/node_mod
 MERGED from [:unimodules-image-loader-interface] /home/matthew/Documents/reactNative/Dice/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
 MERGED from [:unimodules-sensors-interface] /home/matthew/Documents/reactNative/Dice/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
 MERGED from [org.webkit:android-jsc:r245459] /root/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/936ea499b1f984a274f0c718df722e19/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.1.0-rc01] /root/.gradle/caches/transforms-1/files-1.1/exifinterface-1.1.0-rc01.aar/260091bd2be9d682616ae553bde346c1/AndroidManifest.xml:17:1-24:12
 MERGED from [ir.tapsell.plus:tapsell-plus-sdk-reactnative:1.0.12-beta2] /root/.gradle/caches/transforms-1/files-1.1/tapsell-plus-sdk-reactnative-1.0.12-beta2.aar/91583f8e94232e62adb2d4c9817af4f0/AndroidManifest.xml:2:1-23:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.browser:browser:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/b5e7c4f62a718a6317f21d2d85661232/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/bf909e04bc42e43199ae0b226e324106/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/21e1725e63d086dd688fabd87615dee4/AndroidManifest.xml:2:1-9:12
@@ -56,7 +63,6 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /root/.gradle/c
 MERGED from [androidx.media:media:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/cb90f846974978c8c5f293951eba482b/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/7460731ad7e98a0b29fc3331200a30c7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/30a7d28d49c84a8142dcf0424da499ae/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/a919bedf5fe23cf0b21470a4690d1838/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.1.0.aar/533cea2659f33e794baca1d03c08deb4/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/bd49b7e3f0e6afc9d1c77fed1f730f1b/AndroidManifest.xml:17:1-22:12
@@ -82,7 +88,6 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /root/.gradle/caches/transfor
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/205177009475e0644dba7924376d8db1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/390c3ad0a4147878bb48839b0c7248e5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/1b10fe6ece507e606a50120514e78fd4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/5b43058d8465b7e4411e1b61ca9324fd/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-2.0.0.aar/0092c8bb04344023a0dbc53c4739442e/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/drawee-2.0.0.aar/c75d31d23a2717666c0028775bfe7402/AndroidManifest.xml:2:1-9:12
@@ -192,6 +197,8 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:24:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:25:5-81
+MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-81
+MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-81
 MERGED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-81
 MERGED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-81
 	android:name
@@ -202,6 +209,10 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:26:22-70
 application
 ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:29:5-50:19
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/AndroidManifest.xml:22:5-20
@@ -212,6 +223,10 @@ MERGED from [:expo-location] /home/matthew/Documents/reactNative/Dice/node_modul
 MERGED from [:expo-location] /home/matthew/Documents/reactNative/Dice/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-19:19
 MERGED from [ir.tapsell.plus:tapsell-plus-sdk-reactnative:1.0.12-beta2] /root/.gradle/caches/transforms-1/files-1.1/tapsell-plus-sdk-reactnative-1.0.12-beta2.aar/91583f8e94232e62adb2d4c9817af4f0/AndroidManifest.xml:14:5-21:19
 MERGED from [ir.tapsell.plus:tapsell-plus-sdk-reactnative:1.0.12-beta2] /root/.gradle/caches/transforms-1/files-1.1/tapsell-plus-sdk-reactnative-1.0.12-beta2.aar/91583f8e94232e62adb2d4c9817af4f0/AndroidManifest.xml:14:5-21:19
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/21e1725e63d086dd688fabd87615dee4/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/21e1725e63d086dd688fabd87615dee4/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/1f7197c09078b4c41c2e73d334017d3f/AndroidManifest.xml:22:5-27:19
@@ -226,14 +241,10 @@ MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /root/.
 MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-ads-identifier-16.0.0.aar/8b40c6b563a7c0bab44b8a04ecf24f4e/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/b557abb949562a1262fb6a751cde2120/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] /root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/b557abb949562a1262fb6a751cde2120/AndroidManifest.xml:22:5-26:19
-MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:10:5-20
 MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/1ccc7b22b8551eb31d61fd38261c43df/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/1ccc7b22b8551eb31d61fd38261c43df/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/002b6e97d5b1e573080a76693732bda7/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/002b6e97d5b1e573080a76693732bda7/AndroidManifest.xml:24:5-25:19
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] /root/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/380887e895b98b3b336625ac565474f4/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] /root/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/380887e895b98b3b336625ac565474f4/AndroidManifest.xml:11:5-20
 MERGED from [io.nlopez.smartlocation:library:3.2.11] /root/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/b4f820a7a5c89cc83dc7408919fa41af/AndroidManifest.xml:18:5-28:19
@@ -284,6 +295,14 @@ uses-sdk
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-resizer] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-resizer/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-resizer] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-resizer/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community_async-storage] /home/matthew/Documents/reactNative/Dice/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-tapsell-plus] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-tapsell-plus/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
@@ -354,8 +373,14 @@ MERGED from [:unimodules-sensors-interface] /home/matthew/Documents/reactNative/
 MERGED from [:unimodules-sensors-interface] /home/matthew/Documents/reactNative/Dice/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /root/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/936ea499b1f984a274f0c718df722e19/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /root/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/936ea499b1f984a274f0c718df722e19/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.exifinterface:exifinterface:1.1.0-rc01] /root/.gradle/caches/transforms-1/files-1.1/exifinterface-1.1.0-rc01.aar/260091bd2be9d682616ae553bde346c1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.1.0-rc01] /root/.gradle/caches/transforms-1/files-1.1/exifinterface-1.1.0-rc01.aar/260091bd2be9d682616ae553bde346c1/AndroidManifest.xml:20:5-22:41
 MERGED from [ir.tapsell.plus:tapsell-plus-sdk-reactnative:1.0.12-beta2] /root/.gradle/caches/transforms-1/files-1.1/tapsell-plus-sdk-reactnative-1.0.12-beta2.aar/91583f8e94232e62adb2d4c9817af4f0/AndroidManifest.xml:7:5-9:41
 MERGED from [ir.tapsell.plus:tapsell-plus-sdk-reactnative:1.0.12-beta2] /root/.gradle/caches/transforms-1/files-1.1/tapsell-plus-sdk-reactnative-1.0.12-beta2.aar/91583f8e94232e62adb2d4c9817af4f0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.browser:browser:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/b5e7c4f62a718a6317f21d2d85661232/AndroidManifest.xml:20:5-44
 MERGED from [androidx.browser:browser:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/b5e7c4f62a718a6317f21d2d85661232/AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/bf909e04bc42e43199ae0b226e324106/AndroidManifest.xml:20:5-44
@@ -388,8 +413,6 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/cach
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/7460731ad7e98a0b29fc3331200a30c7/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/30a7d28d49c84a8142dcf0424da499ae/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/30a7d28d49c84a8142dcf0424da499ae/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.bumptech.glide:glide:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/d7129be757635a6aa0c2ab7a4330e5ba/AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/a919bedf5fe23cf0b21470a4690d1838/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/a919bedf5fe23cf0b21470a4690d1838/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.1.0.aar/533cea2659f33e794baca1d03c08deb4/AndroidManifest.xml:20:5-22:41
@@ -440,8 +463,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/cac
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/390c3ad0a4147878bb48839b0c7248e5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/1b10fe6ece507e606a50120514e78fd4/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/1b10fe6ece507e606a50120514e78fd4/AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /root/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/07d6d4638eac8f382742264eedac42e2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/5b43058d8465b7e4411e1b61ca9324fd/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/5b43058d8465b7e4411e1b61ca9324fd/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /root/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-2.0.0.aar/0092c8bb04344023a0dbc53c4739442e/AndroidManifest.xml:5:5-7:41
@@ -472,6 +493,22 @@ INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Andr
 		INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:13-56
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:13-17:58
+	android:resource
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:17-55
+	android:name
+		ADDED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:17-67
 uses-permission#android.permission.STORAGE
 ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-66
 	android:name
@@ -488,12 +525,6 @@ ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_mod
 		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:23:13-48
 	android:name
 		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:13-74
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:70
-	android:resource
-		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-67
-	android:name
-		ADDED from [:expo-file-system] /home/matthew/Documents/reactNative/Dice/node_modules/expo-file-system/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
 uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from [:expo-location] /home/matthew/Documents/reactNative/Dice/node_modules/expo-location/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-77
 	android:name

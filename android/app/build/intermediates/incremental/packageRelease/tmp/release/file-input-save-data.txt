@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 17 06:43:48 EDT 2020
+#Sun May 10 00:16:48 EDT 2020
 64.base=/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/transforms/mergeJniLibs/release/0
 64.baseType=DIRECTORY
 33.base=/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/transforms/mergeJniLibs/release/0

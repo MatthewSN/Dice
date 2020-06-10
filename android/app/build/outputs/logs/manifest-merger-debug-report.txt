@@ -4,6 +4,7 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:1:1-52:12
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-image-resizer] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-resizer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
@@ -208,6 +209,8 @@ ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/Android
 		ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:26:22-70
 application
 ADDED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml:29:5-50:19
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
 MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [:react-native-image-picker] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.61.5] /root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/AndroidManifest.xml:11:5-20
@@ -292,6 +295,8 @@ uses-sdk
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/matthew/Documents/reactNative/Dice/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-splash-screen] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-fs] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-image-resizer] /home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-resizer/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41

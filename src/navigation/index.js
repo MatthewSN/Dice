@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector, useDispatch } from "react-redux";
 import { setToken } from "../redux/actions";
+import { getUser } from "../redux/actions/api";
 import AsyncStorage from "@react-native-community/async-storage";
 const Stack = createStackNavigator();
 import Strings from "../utils/strings";
@@ -14,18 +15,18 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getToken();
+    getTokenFromStorage();
   }, []);
 
-  const getToken = async () => {
+  const getTokenFromStorage = async () => {
     try {
       const token = await AsyncStorage.getItem("token");
-      dispatch(setToken(token));
+      dispatch(getUser(token));
     } catch (e) {
       console.log(e.message);
     }
   };
-  if (/* token && name */ true) {
+  if (token && name) {
     return (
       <NavigationContainer>
         <Stack.Navigator
@@ -48,16 +49,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         >
-          <Stack.Screen
-            name="CompleteRegistration"
-            component={Screens.CompleteRegistration}
-            options={{
-              headerShown: true,
-              headerTitle: Strings.COMPLETE_RIGISTRATION,
-              headerStyle: { backgroundColor: Colors.COLOR_GRAY_1 },
-              headerTitleStyle: { fontWeight: "700" },
-            }}
-          />
+          <Stack.Screen name="Profile" component={Screens.Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     );

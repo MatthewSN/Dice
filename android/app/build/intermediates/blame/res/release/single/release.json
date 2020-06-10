@@ -20,16 +20,20 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable/btn_radio_on_mtrl.xml"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_notification_media_cancel_action.xml.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/cb90f846974978c8c5f293951eba482b/res/layout/notification_media_cancel_action.xml"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/color-v23_abc_tint_edittext.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/color-v23/abc_tint_edittext.xml"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_notification_media_cancel_action.xml.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/cb90f846974978c8c5f293951eba482b/res/layout/notification_media_cancel_action.xml"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/xml_provider_paths.xml.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/release/xml/provider_paths.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_abc_spinner_textfield_background_material.xml.flat",
@@ -104,20 +108,20 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/anim/btn_checkbox_to_checked_icon_null_animation.xml"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/1f7197c09078b4c41c2e73d334017d3f/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
-    },
-    {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_abc_ic_clear_material.xml.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable/abc_ic_clear_material.xml"
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/color_mtrl_tabs_colored_ripple_color.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/color/mtrl_tabs_colored_ripple_color.xml"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_abc_ic_clear_material.xml.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/1f7197c09078b4c41c2e73d334017d3f/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -156,12 +160,12 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/xml_rn_dev_preferences.xml.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/res/xml/rn_dev_preferences.xml"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/xml_rn_dev_preferences.xml.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/res/xml/rn_dev_preferences.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -212,12 +216,12 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_design_ic_visibility.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/drawable-mdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -256,12 +260,12 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/color_mtrl_btn_text_btn_ripple_color.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/color/mtrl_btn_text_btn_ripple_color.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_design_navigation_item.xml.flat",
@@ -276,24 +280,24 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/drawable-xxxhdpi-v4/design_ic_visibility_off.png"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_navigation_empty_icon.xml.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/drawable/navigation_empty_icon.xml"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_navigation_empty_icon.xml.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/drawable/navigation_empty_icon.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_abc_btn_check_material.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable/abc_btn_check_material.xml"
     },
     {
-        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/interpolator_fast_out_slow_in.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/interpolator/fast_out_slow_in.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -848,6 +852,10 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/mipmap-hdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-hdpi/icon.png"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/animator/mtrl_fab_transformation_sheet_collapse_spec.xml"
     },
@@ -862,6 +870,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_redbox_item_frame.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/97a5f61669e2505ee69ff5815757ef1f/res/layout/redbox_item_frame.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_list_item.xml.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/release/layout/list_item.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout-v21_notification_action.xml.flat",
@@ -998,6 +1010,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-mdpi_assets_drawable_dice1.png.flat",
         "source": "/home/matthew/Documents/reactNative/Dice/android/app/build/generated/res/react/release/drawable-mdpi/assets_drawable_dice1.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_launch_screen.xml.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/layout/launch_screen.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_abc_cascading_menu_item_layout.xml.flat",
@@ -1688,6 +1704,10 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/837733d253109d42a708200aa1cbc80f/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/mipmap-mdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-mdpi/icon.png"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/raw_node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_fontawesome.ttf.flat",
         "source": "/home/matthew/Documents/reactNative/Dice/android/app/build/generated/res/react/release/raw/node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_fontawesome.ttf"
     },
@@ -1726,6 +1746,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/mipmap-xhdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-xhdpi/icon.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/layout_abc_list_menu_item_icon.xml.flat",
@@ -2422,6 +2446,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_notification_bg.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/1ccc7b22b8551eb31d61fd38261c43df/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/drawable/icon.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/release/drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",

@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, BackHandler } from "react-native";
 import diceList from "../utils/dataLists/diceList";
-import { useSelector } from "react-redux";
 import GamePlayingStates from "../utils/gamePlayingStates";
 import Colors from "../utils/colors";
-
+/* 
+class Test extends React.Component {
+  componentWillUnmount() {}
+  render() {
+    const {
+      diceCnt,
+      defaultDiceColorStyle,
+      wrongGuessStyle,
+      rightGuessStyle,
+    } = styles;
+    return (
+      <View style={diceColorStyle}>
+        <Image
+          style={{ width: 100, height: 100 }}
+          source={currentDiceDimention}
+        />
+      </View>
+    );
+  }
+}
+ */
 export default ({
   maxRoll = 5,
   onRollingEnd = () => {},
   roll = false,
   gamePlayingStates = GamePlayingStates.PLAYING,
+  navigation,
 }) => {
-  const {
-    diceCnt,
-    defaultDiceColorStyle,
-    wrongGuessStyle,
-    rightGuessStyle,
-  } = styles;
+  const { defaultDiceColorStyle, wrongGuessStyle, rightGuessStyle } = styles;
 
   const [currentDiceDimention, setCurrentDiceDimention] = useState(
     diceList[0].image

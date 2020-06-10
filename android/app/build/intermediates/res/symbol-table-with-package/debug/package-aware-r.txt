@@ -705,6 +705,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1081,6 +1082,7 @@ drawable googleg_standard_color_18
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1474,6 +1476,7 @@ layout design_text_input_password_icon
 layout dev_loading_view
 layout dialog_consent
 layout fps_view
+layout launch_screen
 layout list_item
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1507,6 +1510,7 @@ layout tapsell_content_video_ad_template
 layout tapsell_small_content_banner_ad_template
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap icon
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1871,6 +1875,9 @@ style SpinnerDatePickerDialog
 style SpinnerDatePickerStyle
 style SpinnerTimePickerDialog
 style SpinnerTimePickerStyle
+style SplashScreen_Fullscreen
+style SplashScreen_SplashAnimation
+style SplashScreen_SplashTheme
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2

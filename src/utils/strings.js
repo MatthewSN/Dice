@@ -8,7 +8,7 @@ export default {
   START_THE_GAME: "شروع بازی",
   ROLL_THE_DICE: "انداختن تاس",
   CHOOSE_THREE_DIMENTIONS: "سه وجه را انتخاب کنید",
-  LOGIN: "ورود",
+  LOGIN: "ورود یا ثبت نام",
   REGISTER: "ثبت نام",
   PHONE_NUMBER: "شماره تلفن",
   NAME: "اسم",
@@ -35,6 +35,6 @@ export default {
   AD_IS_NOT_AVAILABLE: "در حال حاضر تبلیغی در دسترس نیست",
   TRY_AGAIN: "تلاش مجدد",
   YOU_LOST: "شما باختید",
-  SHOW_SCORES: "نمایش امتیازیات",
+  SHOW_SCORES: "نمایش امتیازات",
   PROFILE: "پروفایل",
 };

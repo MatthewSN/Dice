@@ -32,7 +32,6 @@ const Home = ({ navigation }) => {
   } = useSelector((state) => {
     return state.pointsInfo;
   });
-  const { gamePlayingState } = useSelector((state) => state.appStatus);
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       dispatch(getPointInfo());

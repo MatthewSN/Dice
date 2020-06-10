@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Dimensions,
   Alert,
+  BackHandler,
 } from "react-native";
 import diceList from "../utils/dataLists/diceList";
 import DiceDimentions from "../components/DiceDimentions";
@@ -39,6 +40,10 @@ const Game = ({ navigation }) => {
   const { gamePlayingState } = useSelector((state) => state.appStatus);
   useEffect(() => {
     changeGamePlayingState(GamePlayingStates.PLAYING);
+
+    BackHandler.addEventListener("hardwareBackPress", () => {
+      changeGamePlayingState(GamePlayingStates.NOT_PLAYING);
+    });
   }, []);
 
   //Handeling setting the game state dispatch
@@ -135,14 +140,20 @@ const Game = ({ navigation }) => {
 
   //Called after dice rolling has ended(Called in DiceLoader component)
   const onRollingEnd = (diceDimensionResult = 1) => {
-    const resultInSelectedIndex = selectedDimensions.findIndex(
-      (item) => parseInt(item) === diceDimensionResult
-    );
-    const lostGame = didLost(diceDimensionResult);
-    if (lostGame) {
-      onGameLost();
-    } else {
-      onPointGained();
+    if (
+      gamePlayingState !== GamePlayingStates.NOT_PLAYING &&
+      gamePlayingState !== GamePlayingStates.ROLLING
+    ) {
+      console.log("XState", gamePlayingState);
+      const resultInSelectedIndex = selectedDimensions.findIndex(
+        (item) => parseInt(item) === diceDimensionResult
+      );
+      const lostGame = didLost(diceDimensionResult);
+      if (lostGame) {
+        onGameLost();
+      } else {
+        onPointGained();
+      }
     }
   };
 

@@ -76,14 +76,14 @@ export const verifyPhoneNumber = (phoneNumber, code) => {
 
       if (json.state === ApiResponseState.SUCCESS) {
         const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
-        const { Token: token, Name: name, Image: image } = responseObj;
+        const { Token: token, Name: name, Image: avatarBase64 } = responseObj;
         AsyncStorage.setItem("token", token);
         AsyncStorage.setItem("name", name);
         dispatch(
           Actions.setUserInfo({
             token,
             name,
-            image,
+            avatarBase64,
           })
         );
       } else {
@@ -143,19 +143,29 @@ export const logPoint = (status) => {
   };
 };
 
-export const getUser = () => {
+export const getUser = (StoredToken = "") => {
   return async (dispatch, getState) => {
     try {
-      const { token } = getState();
-      const response = await HttpRequests.getRequest(
+      let { token } = getState().user;
+      if (StoredToken) {
+        token = StoredToken;
+      }
+
+      const response = await fetch(
         Urls.BASE_URL + Urls.GET_USER,
-        token
+        HttpRequests.getRequest(token)
       );
       const json = await response.json();
+
+      console.log(json.name);
       if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(Actions.setUser(json.value));
+        const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
+        const { Token: token, Name: name, Image: avatarBase64 } = responseObj;
+        dispatch(Actions.setUserInfo({ token, name }));
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log("Not Athorized1 " + e.message);
+    }
   };
 };
 
@@ -261,12 +271,10 @@ export const userEdit = (image, name) => {
         )
       );
 
-      console.log("RESPONSE", response);
-
       const json = await response.json();
-
       if (json.state === ApiResponseState.SUCCESS) {
-        dispatch(Actions.setCodeSent(true));
+        ToastAndroid.show("saved", ToastAndroid.SHORT);
+        dispatch(getUser());
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);
       }

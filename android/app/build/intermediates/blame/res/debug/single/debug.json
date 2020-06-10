@@ -1248,6 +1248,10 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-hdpi/icon.png"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/anim_abc_slide_in_top.xml.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/anim/abc_slide_in_top.xml"
     },
@@ -1496,6 +1500,10 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-xxhdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-mdpi/icon.png"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
@@ -1720,6 +1728,10 @@
         "source": "/root/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/b5e7c4f62a718a6317f21d2d85661232/res/layout/browser_actions_context_menu_page.xml"
     },
     {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/mipmap-xhdpi/icon.png"
+    },
+    {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/1f7197c09078b4c41c2e73d334017d3f/res/drawable-mdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
@@ -1822,6 +1834,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable_icon.png.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/drawable/icon.png"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/layout_notification_media_cancel_action.xml.flat",
@@ -2118,6 +2134,10 @@
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/4f2bb82c1f33baf42572776ea4b96218/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/layout_launch_screen.xml.flat",
+        "source": "/home/matthew/Documents/reactNative/Dice/android/app/src/main/res/layout/launch_screen.xml"
     },
     {
         "merged": "/home/matthew/Documents/reactNative/Dice/android/app/build/intermediates/res/merged/debug/drawable_abc_ic_clear_material.xml.flat",

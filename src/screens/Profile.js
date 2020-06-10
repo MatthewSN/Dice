@@ -5,14 +5,12 @@ import {
   Dimensions,
   KeyboardAvoidingView,
 } from "react-native";
-import { Button } from "react-native-elements";
 import Strings from "../utils/strings";
 import { useDispatch, useSelector } from "react-redux";
 import { userEdit } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 import ImagePicker from "react-native-image-picker";
-import { Avatar } from "react-native-elements";
 import ImageResizer from "react-native-image-resizer";
 import RNFS from "react-native-fs";
 import UserAvatar from "../components/UserAvatar";
@@ -44,7 +42,7 @@ const SignUp = ({ navigation }) => {
   const onCompleteButtonPress = () => {
     if (!name) {
       setMessage(Strings.EMPTY_FIELDS_ERROR);
-    } else {
+    } else if (name != savedName) {
       dispatch(userEdit(avatarBase64, name));
     }
   };
@@ -112,12 +110,7 @@ const SignUp = ({ navigation }) => {
       </KeyboardAvoidingView>
     );
   };
-  return (
-    <View style={containerStyle}>
-      {RenderAvatar()}
-      {CustomizedRegiterCard()}
-    </View>
-  );
+  return <View style={containerStyle}>{CustomizedRegiterCard()}</View>;
 };
 
 const styles = StyleSheet.create({

@@ -4,11 +4,9 @@ import { Card, Button } from "react-native-elements";
 import Strings from "../utils/strings";
 import RNTapsellPlus from "react-native-tapsell-plus";
 import Keys from "../utils/tapsellKeys";
-import { useDispatch, useSelector } from "react-redux";
-import { setIsAdAvailable } from "../redux/actions";
-import { getPointInfo, logPoint, finishGame } from "../redux/actions/api";
+import { useDispatch } from "react-redux";
+import { logPoint, finishGame } from "../redux/actions/api";
 import Colors from "../utils/colors";
-import ScoreHeader from "../components/ScoreHeader";
 
 const Home = ({ navigation }) => {
   const [isAdAvailable, setIsAdAvailable] = useState(false);
