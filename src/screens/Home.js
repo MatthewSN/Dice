@@ -76,6 +76,7 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={containerStyle}>
+     
       <View style={cardOuterContainerStyle}>
         <Card containerStyle={cardContainerStyle}>
           <View style={buttonContainerStyle}>

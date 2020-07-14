@@ -10,6 +10,7 @@ import { getPointInfo, logPoint } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import ScoreHeader from "../components/ScoreHeader";
 import GamePlayingStates from "../utils/gamePlayingStates";
+import { useRoute } from "@react-navigation/native";
 
 const Home = ({ navigation }) => {
   const {
@@ -22,6 +23,8 @@ const Home = ({ navigation }) => {
     cardViewContainerStyle,
     refreshButtonContainerStyle,
   } = styles;
+  const route = useRoute();
+  console.log("Screen Name", route.name);
   const dispatch = useDispatch();
   const {
     currentPoint,
@@ -90,8 +93,11 @@ const Home = ({ navigation }) => {
                 <Text style={numbersStyle}>{rank}</Text>
               </View>
             </View>
-
-            <Button onPress={onStartGamePress} title={Strings.TRY_AGAIN} />
+            {route.name === "RetryAndScores" ? (
+              <Button onPress={onStartGamePress} title={Strings.TRY_AGAIN} />
+            ) : (
+              undefined
+            )}
           </Card>
         </View>
         <View style={refreshButtonContainerStyle}>

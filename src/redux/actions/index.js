@@ -46,6 +46,11 @@ export const setToken = (token = "") => ({
   payload: token,
 });
 
+export const setName = (name = "") => ({
+  type: Types.SET_NAME,
+  payload: name,
+});
+
 //Action for changing the game state
 export const setGamePlayingState = (
   gamePlayingState = GamePlayingStates.NOT_PLAYING

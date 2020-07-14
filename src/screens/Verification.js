@@ -8,10 +8,10 @@ import { verifyPhoneNumber } from "../redux/actions/api";
 import Colors from "../utils/colors";
 import RegisterCard from "../components/RegisterCard";
 
-
 class Verification extends React.Component {
   constructor(props) {
     super(props);
+
     this.onCodeChange = this.onCodeChange.bind(this);
     this.onVerifyPress = this.onVerifyPress.bind(this);
     this.setCodeSentState = this.setCodeSentState.bind(this);
@@ -44,9 +44,14 @@ class Verification extends React.Component {
         message: Strings.EMPTY_FIELD_ERROR,
       }));
     } else {
-      this.props.dispatch(
-        verifyPhoneNumber(this.props.route.params.phoneNumber, this.state.code)
-      );
+      this.props.dispatch(() => {
+        return verifyPhoneNumber(
+          this.props.route.params.phoneNumber,
+          this.state.code
+        ).then(() => {
+          console.log("It's working as it should");
+        });
+      });
     }
   }
   render() {

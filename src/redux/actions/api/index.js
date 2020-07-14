@@ -60,41 +60,6 @@ export const signUp = (name, phoneNumber, image) => {
   };
 };
 
-export const verifyPhoneNumber = (phoneNumber, code) => {
-  return async (dispatch) => {
-    try {
-      const response = await fetch(
-        Urls.BASE_URL +
-          Urls.VERIFY_PHONE_NUMBER +
-          HttpRequests.createRequestParams({
-            PhoneNumber: phoneNumber,
-            Code: code,
-          }),
-        HttpRequests.postRequest()
-      );
-      const json = await response.json();
-
-      if (json.state === ApiResponseState.SUCCESS) {
-        const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
-        const { Token: token, Name: name, Image: avatarBase64 } = responseObj;
-        AsyncStorage.setItem("token", token);
-        AsyncStorage.setItem("name", name);
-        dispatch(
-          Actions.setUserInfo({
-            token,
-            name,
-            avatarBase64,
-          })
-        );
-      } else {
-        ToastAndroid.show(json.message, ToastAndroid.SHORT);
-      }
-    } catch (e) {
-      ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
-    }
-  };
-};
-
 export const finishGame = () => {
   return async (dispatch, getState) => {
     try {
@@ -143,6 +108,44 @@ export const logPoint = (status) => {
   };
 };
 
+export const verifyPhoneNumber = (phoneNumber, code) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(
+        Urls.BASE_URL +
+          Urls.VERIFY_PHONE_NUMBER +
+          HttpRequests.createRequestParams({
+            PhoneNumber: phoneNumber,
+            Code: code,
+          }),
+        HttpRequests.postRequest()
+      );
+      const json = await response.json();
+
+      if (json.state === ApiResponseState.SUCCESS) {
+        const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
+        let { Token: token, Name: name, Image: avatarBase64 } = responseObj;
+        if (name === null) {
+          name = "";
+        }
+        AsyncStorage.setItem("token", token);
+        AsyncStorage.setItem("name", name);
+        dispatch(
+          Actions.setUserInfo({
+            token,
+            name,
+            avatarBase64,
+          })
+        );
+      } else {
+        ToastAndroid.show(json.message, ToastAndroid.SHORT);
+      }
+    } catch (e) {
+      ToastAndroid.show(Strings.WRONG_VERIFICATION_CODE, ToastAndroid.SHORT);
+    }
+  };
+};
+
 export const getUser = (StoredToken = "") => {
   return async (dispatch, getState) => {
     try {
@@ -157,11 +160,15 @@ export const getUser = (StoredToken = "") => {
       );
       const json = await response.json();
 
-      console.log(json.name);
       if (json.state === ApiResponseState.SUCCESS) {
         const responseObj = JSON.parse(json.value.replace(/[/]+/g, ""));
-        const { Token: token, Name: name, Image: avatarBase64 } = responseObj;
-        dispatch(Actions.setUserInfo({ token, name }));
+        let { Name: name, Image: avatarBase64 } = responseObj;
+        if (name === null) {
+          name = "";
+        }
+        AsyncStorage.setItem("name", name);
+
+        dispatch(Actions.setUserInfo({ token, name, avatarBase64 }));
       }
     } catch (e) {
       console.log("Not Athorized1 " + e.message);
@@ -211,7 +218,7 @@ export const getPointInfo = () => {
 export const getPoint = () => {
   return async (dispatch, getState) => {
     try {
-      const { token } = getState();
+      const { token } = getState().user;
       const response = await HttpRequests.getRequest(
         Urls.BASE_URL + Urls.GET_POINT,
         token
@@ -259,6 +266,8 @@ export const signInUp = (phoneNumber) => {
 export const userEdit = (image, name) => {
   return async (dispatch, getState) => {
     try {
+      const { token } = getState().user;
+
       const response = await fetch(
         Urls.BASE_URL +
           Urls.USER_EDIT +
@@ -266,14 +275,13 @@ export const userEdit = (image, name) => {
             Image: image,
             Name: name,
           }),
-        HttpRequests.postRequest(
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjkwNTM2MTc4NzQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTWF0aW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjVlOGQ4NTI3NTgxYTBkMTFkNGFlNjUxZiIsImV4cCI6MTkwMjIxNzcyOSwiaXNzIjoiaHR0cDovL3NoZXBlbC5pciIsImF1ZCI6Imh0dHA6Ly9zaGVwZWwuaXIifQ.WWU94ECd2CkmamNivKu_AlwliYPCdlg03FIyXbXP9cI"
-        )
+        HttpRequests.postRequest(token)
       );
 
       const json = await response.json();
       if (json.state === ApiResponseState.SUCCESS) {
         ToastAndroid.show("saved", ToastAndroid.SHORT);
+
         dispatch(getUser());
       } else {
         ToastAndroid.show(json.message, ToastAndroid.SHORT);

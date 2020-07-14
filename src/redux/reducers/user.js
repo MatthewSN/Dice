@@ -18,6 +18,11 @@ export default (state = initialState, action) => {
         ...state,
         token: action.payload,
       };
+    case Types.SET_NAME:
+      return {
+        ...state,
+        name: action.payload,
+      };
     case Types.SET_AVATAR_BASE64:
       return {
         ...state,

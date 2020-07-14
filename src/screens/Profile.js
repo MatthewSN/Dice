@@ -41,9 +41,10 @@ const SignUp = ({ navigation }) => {
   //Called when pressing button for subminting image and name
   const onCompleteButtonPress = () => {
     if (!name) {
-      setMessage(Strings.EMPTY_FIELDS_ERROR);
+      setMessage(Strings.EMPTY_FIELD_ERROR);
     } else if (name != savedName) {
       dispatch(userEdit(avatarBase64, name));
+      setMessage("");
     }
   };
 

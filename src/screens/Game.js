@@ -36,15 +36,42 @@ const Game = ({ navigation }) => {
   const [diceDimensions, setDiceDimensions] = useState(diceList);
   const [selectedDimensions, setSelectedDimensions] = useState([]);
   const [currentPoint, setCurrentPoint] = useState(0);
+  const { pointInRecord } = useSelector((state) => {
+    return state.pointsInfo;
+  });
   const dispatch = useDispatch();
   const { gamePlayingState } = useSelector((state) => state.appStatus);
   useEffect(() => {
+    if (pointInRecord === 0) {
+    }
     changeGamePlayingState(GamePlayingStates.PLAYING);
-
     BackHandler.addEventListener("hardwareBackPress", () => {
       changeGamePlayingState(GamePlayingStates.NOT_PLAYING);
     });
   }, []);
+
+  const openCantPlayAlertWindow = () => {
+    Alert.alert(
+      "!!",
+      Strings.YOU_LOST,
+      [
+        {
+          text: Strings.TRY_AGAIN,
+          onPress: () => {
+            resetForNewGame();
+          },
+          style: "cancel",
+        },
+        {
+          text: Strings.SHOW_SCORES,
+          onPress: () => {
+            leaveToScoresScreen();
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   //Handeling setting the game state dispatch
   const changeGamePlayingState = (newState = GamePlayingStates.PLAYING) => {
@@ -140,20 +167,14 @@ const Game = ({ navigation }) => {
 
   //Called after dice rolling has ended(Called in DiceLoader component)
   const onRollingEnd = (diceDimensionResult = 1) => {
-    if (
-      gamePlayingState !== GamePlayingStates.NOT_PLAYING &&
-      gamePlayingState !== GamePlayingStates.ROLLING
-    ) {
-      console.log("XState", gamePlayingState);
-      const resultInSelectedIndex = selectedDimensions.findIndex(
-        (item) => parseInt(item) === diceDimensionResult
-      );
-      const lostGame = didLost(diceDimensionResult);
-      if (lostGame) {
-        onGameLost();
-      } else {
-        onPointGained();
-      }
+    const resultInSelectedIndex = selectedDimensions.findIndex(
+      (item) => parseInt(item) === diceDimensionResult
+    );
+    const lostGame = didLost(diceDimensionResult);
+    if (lostGame) {
+      onGameLost();
+    } else {
+      onPointGained();
     }
   };
 
@@ -206,7 +227,7 @@ const Game = ({ navigation }) => {
   };
 
   const leaveToScoresScreen = () => {
-    navigation.replace("Scores");
+    navigation.replace("RetryAndScores");
   };
   //Getting score in winnig state
   const sumbitResultForGettingPoints = () => {

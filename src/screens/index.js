@@ -4,6 +4,7 @@ import Verification from "./Verification";
 import Scores from "./Scores";
 import SignInOrUp from "./SignInOrUp";
 import Profile from "./Profile";
+import Loading from "./Loading";
 
 export default {
   Game,
@@ -12,4 +13,5 @@ export default {
   Scores,
   SignInOrUp,
   Profile,
+  Loading,
 };

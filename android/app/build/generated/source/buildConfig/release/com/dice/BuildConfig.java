@@ -5,7 +5,7 @@ package com.dice;
 
 public final class BuildConfig {
   public static final boolean DEBUG = false;
-  public static final String APPLICATION_ID = "com.dice";
+  public static final String APPLICATION_ID = "ir.xinno.earn.pullapp";
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;

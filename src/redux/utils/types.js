@@ -10,4 +10,5 @@ export default {
   SET_TOKEN: "set token",
   SET_GAME_PLAYING_STATE: "set game playing state",
   SET_AVATAR_BASE64: "set avatar base64",
+  SET_NAME: "set name",
 };

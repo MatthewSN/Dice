@@ -37,4 +37,5 @@ export default {
   YOU_LOST: "شما باختید",
   SHOW_SCORES: "نمایش امتیازات",
   PROFILE: "پروفایل",
+  NOT_ENOUGH_SCORE:""
 };
