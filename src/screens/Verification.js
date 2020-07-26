@@ -44,14 +44,10 @@ class Verification extends React.Component {
         message: Strings.EMPTY_FIELD_ERROR,
       }));
     } else {
-      this.props.dispatch(() => {
-        return verifyPhoneNumber(
-          this.props.route.params.phoneNumber,
-          this.state.code
-        ).then(() => {
-          console.log("It's working as it should");
-        });
-      });
+      this.props.dispatch(verifyPhoneNumber(
+        this.props.route.params.phoneNumber,
+        this.state.code
+      ));
     }
   }
   render() {
